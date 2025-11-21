@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaraKana Latin Jazz</title>
+    
+    <!-- 1. CHARGEMENT DE TAILWIND CSS (Le Design) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. CONFIGURATION DES COULEURS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        beige: '#F3F3F1',
+                        orange: '#FF6600',
+                        bleu: '#0077BE',
+                        black: '#000000',
+                        white: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- 3. CHARGEMENT DES POLICES ET ICÔNES -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- 4. STYLES PERSONNALISÉS (Animations) -->
+    <style>
+        body { font-family: 'Manrope', sans-serif; background-color: #F3F3F1; color: #1A1A1A; overflow-x: hidden; }
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+
+        /* Animation Marquee (Texte qui défile) */
+        .marquee-container { overflow: hidden; white-space: nowrap; }
+        .marquee-content { display: inline-block; animation: marquee 20s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* Animation d'apparition au scroll */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Lightbox pour galerie */
+        .lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox.active { display: flex; align-items: center; justify-content: center; }
+        .lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border: 2px solid white; }
+        .lightbox-close { position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; }
+        .lightbox-close:hover { color: #FF6600; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- HEADER FIXE NOIR -->
+    <header class="fixed top-0 w-full z-50 bg-black text-white px-6 py-4 flex justify-between items-center border-b border-white/10 shadow-lg">
+        <div class="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer font-serif hover:opacity-80 transition" onclick="document.getElementById('hero').scrollIntoView({behavior: 'smooth'})">
+            MaraKana<span class="text-orange">.</span>
+        </div>
+        
+        <div class="flex items-center gap-6">
+            <!-- Menu Mobile Icon -->
+            <button onclick="toggleMenu()" class="text-white uppercase font-bold text-sm tracking-widest hover:text-orange transition-colors z-50 relative">
+                <span id="menu-text">MENU</span>
+            </button>
+            <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="hidden md:block bg-orange text-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-black transition-colors text-sm uppercase tracking-widest">
+                Contact
+            </button>
+        </div>
+    </header>
+
+    <!-- MENU PLEIN ÉCRAN (Caché par défaut) -->
+    <div id="fullscreen-menu" class="fixed inset-0 bg-beige z-40 flex flex-col items-center justify-center gap-8 transform -translate-y-full transition-transform duration-500">
+        <a href="#hero" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Accueil</a>
+        <a href="#le-groupe" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Le Groupe</a>
+        <a href="#repertoire" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Répertoire</a>
+        <a href="#agenda" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Agenda</a>
+        <a href="#contact" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Contact</a>
+    </div>
+
+    <!-- SECTION HERO -->
+    <section id="hero" class="min-h-screen pt-32 px-6 md:px-12 flex flex-col justify-center relative border-b border-black">
+        <div class="reveal">
+            <!-- IMAGE PRINCIPALE (GROUPE) SANS LABEL -->
+            <div class="w-full h-[40vh] md:h-[50vh] mb-8 overflow-hidden border border-black bg-gray-200 group">
+                <img src="Groupe Hero.jpg" class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100" alt="MaraKana Live">
+            </div>
+
+            <div class="flex flex-col md:flex-row items-end justify-between gap-8">
+                <div>
+                    <h2 class="text-orange font-bold tracking-[0.3em] uppercase mb-2 text-sm md:text-base">Latin Jazz Quintet</h2>
+                    <h1 class="text-6xl md:text-9xl font-serif leading-[0.9] text-black">
+                        MARA<span class="italic text-bleu">KANA</span>
+                    </h1>
+                </div>
+                <div class="max-w-md text-lg leading-relaxed border-l-2 border-orange pl-6 mb-2">
+                    "Imaginez un instant : le soleil couchant sur Ipanema, une brise chaude qui porte les notes des cuivres..."
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE (BANDE DÉFILANTE) -->
+    <div class="bg-black text-beige py-3 border-y border-white/10 marquee-container">
+        <div class="marquee-content text-2xl md:text-4xl font-serif italic">
+            JAZZ • BOSSA NOVA • SALSA • SWING • CARIBBEAN • JAZZ • BOSSA NOVA • SALSA • SWING • CARIBBEAN • JAZZ • BOSSA NOVA • SALSA • SWING • CARIBBEAN •
+        </div>
+    </div>
+
+    <!-- SECTION LE GROUPE -->
+    <section id="le-groupe" class="py-24 px-6 md:px-12">
+        <div class="reveal">
+            <div class="grid md:grid-cols-12 gap-12 mb-20">
+                <div class="md:col-span-5">
+                    <h2 class="text-5xl md:text-7xl font-serif mb-8">Le <span class="italic text-orange">Groupe</span></h2>
+                    <!-- CITATION DROITE (NON ITALIQUE) -->
+                    <div class="bg-white p-8 border border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mb-8">
+                        <p class="text-xl font-serif leading-relaxed text-bleu">
+                            "En écoutant MaraKana latin jazz, on s'imagine au soleil et au bord de la mer avec une boisson bien fraîche à la main pour une soirée détendue."
+                        </p>
+                    </div>
+                </div>
+                <div class="md:col-span-7 text-lg leading-relaxed space-y-6 text-justify">
+                    <p>Le Groupe <strong>"MaraKana Latin Jazz"</strong> est un ensemble instrumental créé par <strong class="text-orange underline">Bruno Sauvé</strong>, le groupe est basé à Bordeaux. Les musiciens qui le composent ont tous une solide expérience de la scène depuis de nombreuses années.</p>
+                    <p>Tous sont des passionnés de jazz et de musiques sud-américaines. Dès lors, il était évident de faire vivre leur passion commune pour cette musique au sein de "MaraKana latin jazz".</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GRILLE MUSICIENS -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 reveal">
+            
+            <!-- MUSICIEN 1: Bruno (Même taille que les autres) -->
+            <div class="group relative overflow-hidden border border-black bg-gray-200 aspect-[3/4]">
+                <img src="Bruno.JPG" class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700" alt="Bruno Sauvé">
+                <div class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="font-serif text-xl italic">Bruno Sauvé</h3>
+                    <p class="text-xs uppercase tracking-widest text-orange font-bold">Batterie</p>
+                    <span class="text-[10px] uppercase border border-black px-2 py-1 rounded-full mt-2 inline-block">Fondateur</span>
+                </div>
+                 <!-- Mobile Label -->
+                 <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">Bruno Sauvé - Batterie</div>
+            </div>
+
+            <!-- MUSICIEN 2: Olivier -->
+            <div class="group relative overflow-hidden border border-black bg-gray-200 aspect-[3/4]">
+                <img src="Olivier.jpg" class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700" alt="Olivier Lorang">
+                <div class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="font-serif text-xl italic">Olivier Lorang</h3>
+                    <p class="text-xs uppercase tracking-widest text-orange font-bold">Basse</p>
+                </div>
+                <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">Olivier Lorang - Basse</div>
+            </div>
+
+            <!-- MUSICIEN 3: Michaela -->
+            <div class="group relative overflow-hidden border border-black bg-gray-200 aspect-[3/4]">
+                <img src="Michaela.jpg" class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700" alt="Michaela Slavikova">
+                <div class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="font-serif text-xl italic">Michaela Slavikova</h3>
+                    <p class="text-xs uppercase tracking-widest text-orange font-bold">Flûte</p>
+                </div>
+                 <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">Michaela Slavikova - Flûte</div>
+            </div>
+
+            <!-- MUSICIEN 4: Jérôme -->
+            <div class="group relative overflow-hidden border border-black bg-gray-200 aspect-square">
+                <img src="Jérôme.jpg" class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700" alt="Jérôme Denner">
+                <div class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="font-serif text-xl italic">Jérôme Denner</h3>
+                    <p class="text-xs uppercase tracking-widest text-orange font-bold">Trompette</p>
+                </div>
+                 <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">Jérôme Denner - Trompette</div>
+            </div>
+
+            <!-- MUSICIEN 5: Nicolas -->
+            <div class="group relative overflow-hidden border border-black bg-gray-200 aspect-square">
+                <img src="Nicolas.jpg" class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700" alt="Nicolas Lancia">
+                <div class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="font-serif text-xl italic">Nicolas Lancia</h3>
+                    <p class="text-xs uppercase tracking-widest text-orange font-bold">Piano</p>
+                </div>
+                 <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">Nicolas Lancia - Piano</div>
+            </div>
+
+            <!-- MUSICIEN 6: Patrick -->
+            <div class="group relative overflow-hidden border border-black bg-gray-200 aspect-square">
+                <img src="Patrick.jpg" class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700" alt="Patrick Leyrat">
+                <div class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 class="font-serif text-xl italic">Patrick Leyrat</h3>
+                    <p class="text-xs uppercase tracking-widest text-orange font-bold">Congas</p>
+                </div>
+                 <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">Patrick Leyrat - Congas</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION VIDÉO -->
+    <section class="bg-black text-beige py-24 px-6 md:px-12 text-center relative reveal">
+        <h2 class="text-orange uppercase tracking-widest font-bold mb-8">Vidéo Studio</h2>
+        <a href="https://www.youtube.com/watch?v=KylbgGwNpTA" target="_blank" rel="noopener noreferrer" class="max-w-5xl mx-auto border border-white/20 bg-[#1A1A1A] aspect-video flex items-center justify-center relative group cursor-pointer block overflow-hidden">
+            <img src="Youtube Thumbnail.png" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity" alt="Session Studio Bass'n Loc">
+            <div class="z-10 flex flex-col items-center gap-4">
+                <div class="w-20 h-20 rounded-full border-2 border-white bg-black/50 flex items-center justify-center group-hover:bg-orange group-hover:border-orange transition-all">
+                    <i data-lucide="play" class="ml-1 w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-serif italic bg-black/50 px-4 py-2">Session Studio Bass'n Loc</h3>
+            </div>
+        </a>
+    </section>
+
+    <!-- SECTION RÉPERTOIRE -->
+    <section id="repertoire" class="py-24 px-6 md:px-12 border-b border-black reveal">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl md:text-7xl font-serif mb-4">Répertoire</h2>
+            <p class="text-xl italic text-bleu">"Un voyage musical à travers les Amériques"</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-px bg-black border border-black">
+            <!-- COL 1 -->
+            <div class="bg-beige p-8 md:p-12 hover:bg-white transition-colors group h-full">
+                <div class="mb-6"><i data-lucide="music" class="w-12 h-12 text-bleu group-hover:text-orange transition-colors"></i></div>
+                <h3 class="text-2xl font-serif font-bold mb-8 uppercase tracking-wide group-hover:text-orange transition-colors">Standards Jazz</h3>
+                <ul class="space-y-4">
+                    <li class="border-b border-black/5 pb-2">But Not For Me (Chet Baker)</li>
+                    <li class="border-b border-black/5 pb-2">A night in Tunisia (Dizzy Gillespie)</li>
+                    <li class="border-b border-black/5 pb-2">Love for sale (Chet Baker)</li>
+                    <li class="border-b border-black/5 pb-2">Stolen Moments (Oliver Nelson)</li>
+                    <li class="border-b border-black/5 pb-2">Avec le temps (Léo Ferré)</li>
+                </ul>
+            </div>
+             <!-- COL 2 -->
+             <div class="bg-beige p-8 md:p-12 hover:bg-white transition-colors group h-full">
+                <div class="mb-6"><i data-lucide="sun" class="w-12 h-12 text-bleu group-hover:text-orange transition-colors"></i></div>
+                <h3 class="text-2xl font-serif font-bold mb-8 uppercase tracking-wide group-hover:text-orange transition-colors">Brésil</h3>
+                <ul class="space-y-4">
+                    <li class="border-b border-black/5 pb-2">Triste (Jobim)</li>
+                    <li class="border-b border-black/5 pb-2">Partido Alto 2 (J. Beltrami)</li>
+                    <li class="border-b border-black/5 pb-2">Mister Funky Samba</li>
+                    <li class="border-b border-black/5 pb-2">Recado Bossa Nova</li>
+                </ul>
+            </div>
+             <!-- COL 3 -->
+             <div class="bg-beige p-8 md:p-12 hover:bg-white transition-colors group h-full">
+                <div class="mb-6"><i data-lucide="flame" class="w-12 h-12 text-bleu group-hover:text-orange transition-colors"></i></div>
+                <h3 class="text-2xl font-serif font-bold mb-8 uppercase tracking-wide group-hover:text-orange transition-colors">Caraïbes</h3>
+                <ul class="space-y-4">
+                    <li class="border-b border-black/5 pb-2">Cap Verdean Blues</li>
+                    <li class="border-b border-black/5 pb-2">Obsesion</li>
+                    <li class="border-b border-black/5 pb-2">Mambo Influenciado</li>
+                    <li class="border-b border-black/5 pb-2">My Little Suede Shoes</li>
+                </ul>
+            </div>
+        </div>
+        <p class="text-center mt-12 font-serif italic text-2xl md:text-3xl">Et bien plus encore... Chaque concert est unique !</p>
+    </section>
+
+    <!-- SECTION AGENDA -->
+    <section id="agenda" class="py-24 px-6 md:px-12 bg-white relative reveal">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b-4 border-orange pb-4">
+            <h2 class="text-5xl md:text-8xl font-serif">Agenda</h2>
+            <p class="text-xl font-bold uppercase tracking-widest mb-2">Venez nous voir en live !</p>
+        </div>
+
+        <div class="flex flex-col divide-y divide-black border-t border-black">
+            <!-- DATE 1 -->
+            <div class="grid md:grid-cols-4 py-8 gap-4 opacity-40">
+                <div class="md:col-span-1 font-bold text-xl font-serif">25/01/25</div>
+                <div class="md:col-span-2 text-2xl font-light">Soirée Privée</div>
+                <div class="md:col-span-1 flex justify-between items-center">
+                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin" class="w-4"></i> Bordeaux</span>
+                </div>
+            </div>
+            <!-- DATE 2 -->
+            <div class="grid md:grid-cols-4 py-8 gap-4 hover:bg-gray-50 transition-colors">
+                <div class="md:col-span-1 font-bold text-xl font-serif text-orange">11/04/25</div>
+                <div class="md:col-span-2 text-2xl font-light">Le Radis Noir</div>
+                <div class="md:col-span-1 flex justify-between items-center">
+                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin" class="w-4"></i> Bègles</span>
+                </div>
+            </div>
+             <!-- DATE 3 -->
+             <div class="grid md:grid-cols-4 py-8 gap-4 hover:bg-gray-50 transition-colors">
+                <div class="md:col-span-1 font-bold text-xl font-serif text-orange">25/04/25</div>
+                <div class="md:col-span-2 text-2xl font-light">Soirée Privée</div>
+                <div class="md:col-span-1 flex justify-between items-center">
+                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin" class="w-4"></i> Bordeaux</span>
+                </div>
+            </div>
+            <!-- DATE 4 -->
+            <div class="grid md:grid-cols-4 py-8 gap-4 hover:bg-gray-50 transition-colors">
+                <div class="md:col-span-1 font-bold text-xl font-serif text-orange">19/07/25</div>
+                <div class="md:col-span-2 text-2xl font-light">Festival de Jazz de Chasseneuil</div>
+                <div class="md:col-span-1 flex justify-between items-center">
+                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin" class="w-4"></i> Creuse</span>
+                </div>
+            </div>
+             <!-- DATE 5 -->
+             <div class="grid md:grid-cols-4 py-8 gap-4 hover:bg-gray-50 transition-colors">
+                <div class="md:col-span-1 font-bold text-xl font-serif text-orange">04/10/25</div>
+                <div class="md:col-span-2 text-2xl font-light">Café le Baryton</div>
+                <div class="md:col-span-1 flex justify-between items-center">
+                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin" class="w-4"></i> Lanton</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOC ACTUALITÉ STUDIO (FOND NOIR) -->
+        <div class="mt-16 border border-black p-8 flex flex-col md:flex-row items-center gap-8 bg-black text-white">
+            <div class="w-16 h-16 bg-orange text-white flex items-center justify-center rounded-full text-4xl animate-pulse">💿</div>
+            <div class="flex-1 text-center md:text-left">
+                <h3 class="font-bold uppercase tracking-widest mb-2 text-orange">Actualité Studio</h3>
+                <p class="text-lg text-gray-300">
+                    Séances au <strong>Studio Bass'n Loc</strong> pour finaliser les enregistrements. Sortie prévue fin 2025 / début 2026.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PRESSE ET GALERIE -->
+    <section id="presse" class="grid md:grid-cols-2 border-y border-black reveal">
+        <div class="p-12 md:p-24 border-b md:border-b-0 md:border-r border-black bg-beige flex flex-col justify-center">
+            <h3 class="text-3xl font-serif mb-6">Dans la Presse</h3>
+            <p class="uppercase tracking-widest text-sm mb-8 text-orange">Vu sur Sud Ouest</p>
+            <div class="aspect-[4/3] border border-black bg-white p-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] flex items-center justify-center text-center">
+               <span class="italic text-gray-400">Scan Article Sud Ouest</span>
+            </div>
+        </div>
+        <div class="bg-black text-white p-12 md:p-24 flex flex-col justify-center text-center">
+            <h3 class="text-3xl font-serif mb-6">Galerie Photos</h3>
+            <p class="mb-8 text-gray-400">Découvrez les instants volés sur scène.</p>
+            <div class="grid grid-cols-2 gap-4 hover:opacity-100 transition-opacity">
+                <img src="Galerie 1.jpg" class="w-full h-32 object-cover border border-white/20 grayscale hover:grayscale-0 transition-all cursor-pointer" alt="MaraKana Live" onclick="openLightbox(this.src)">
+                <img src="Galerie2.jpg" class="w-full h-32 object-cover border border-white/20 grayscale hover:grayscale-0 transition-all cursor-pointer" alt="MaraKana Live" onclick="openLightbox(this.src)">
+                <img src="Galerie3.png" class="w-full h-32 object-cover border border-white/20 grayscale hover:grayscale-0 transition-all cursor-pointer" alt="MaraKana Live" onclick="openLightbox(this.src)">
+                <img src="Galerie 1.jpg" class="w-full h-32 object-cover border border-white/20 grayscale hover:grayscale-0 transition-all cursor-pointer" alt="MaraKana Live" onclick="openLightbox(this.src)">
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Image agrandie">
+    </div>
+
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="py-24 px-6 md:px-12 reveal">
+        <h2 class="text-5xl font-serif mb-16 text-center">Contactez-nous</h2>
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+            <div>
+                <p class="text-xl leading-relaxed mb-8 font-serif italic">
+                    Une question ? Merci de prendre contact avec le groupe MaraKana ! Nous vous répondrons dès que possible.
+                </p>
+                <div class="space-y-6">
+                    <a href="mailto:bruno.sauve@hotmail.fr" class="flex items-center gap-4 text-lg hover:text-orange transition-colors border-b border-black/10 pb-4">
+                        <i data-lucide="mail"></i> bruno.sauve@hotmail.fr
+                    </a>
+                    <a href="tel:0661534536" class="flex items-center gap-4 text-lg hover:text-orange transition-colors border-b border-black/10 pb-4">
+                        <i data-lucide="phone"></i> 06.61.53.45.36
+                    </a>
+                    <div class="flex items-center gap-4 text-lg border-b border-black/10 pb-4">
+                        <i data-lucide="map-pin"></i> Bordeaux, Gironde (33)
+                    </div>
+                </div>
+            </div>
+            
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Message envoyé !');">
+                <div class="grid grid-cols-2 gap-4">
+                    <input type="text" placeholder="Nom *" class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none" required>
+                    <input type="email" placeholder="Email *" class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none" required>
+                </div>
+                <select class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none text-black/70">
+                    <option>Structure (Mairie, Festival...)</option>
+                    <option>Mairie</option>
+                    <option>Festival</option>
+                    <option>Entreprise</option>
+                    <option>Mariage</option>
+                </select>
+                <textarea rows="4" placeholder="Message *" class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none" required></textarea>
+                <div class="flex justify-between items-center pt-4">
+                    <input type="text" placeholder="5 + 4 ?" class="w-24 bg-transparent border-b border-black p-3 text-center" required>
+                    <button class="bg-bleu text-white px-12 py-4 font-bold uppercase tracking-widest hover:bg-orange transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                        Envoyer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER NOIR (Cohérent avec Header) -->
+    <footer class="bg-black text-white py-12 px-6 md:px-12 text-center md:text-left border-t border-white/10">
+        <div class="flex flex-col md:flex-row justify-between items-end gap-8">
+            <div>
+                <div class="text-4xl font-serif font-bold mb-2">
+                     MaraKana<span class="text-orange">.</span>
+                </div>
+                <p class="text-sm opacity-50">Latin Jazz • Bordeaux • Rayonnement : Nouvelle-Aquitaine et France (selon événement)</p>
+            </div>
+            <div class="flex gap-6 justify-center md:justify-start">
+                <a href="https://www.facebook.com/p/MaraKana-latin-jazz-61560077231411/" target="_blank" rel="noopener noreferrer" class="hover:text-orange transition-colors"><i data-lucide="facebook"></i></a>
+                <a href="https://www.youtube.com/@brunosauve6155" target="_blank" rel="noopener noreferrer" class="hover:text-orange transition-colors"><i data-lucide="youtube"></i></a>
+            </div>
+            <div class="text-center md:text-right text-sm opacity-50">
+                <p>© 2025 MaraKana Latin Jazz.</p>
+                <p>Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT LOGIQUE (Menu + Animations + Icônes) -->
+    <script>
+        // 1. Initialiser les icônes Lucide
+        lucide.createIcons();
+
+        // 2. Gestion du Menu Mobile
+        let isMenuOpen = false;
+        const menu = document.getElementById('fullscreen-menu');
+        const menuText = document.getElementById('menu-text');
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                menu.classList.remove('-translate-y-full');
+                menuText.innerText = "FERMER";
+                menuText.style.color = "black";
+            } else {
+                menu.classList.add('-translate-y-full');
+                menuText.innerText = "MENU";
+                menuText.style.color = "white";
+            }
+        }
+
+        // 3. Animation au scroll (Fade In)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 4. Fonctions Lightbox
+        function openLightbox(src) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = src;
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
