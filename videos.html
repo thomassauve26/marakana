@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidéos & Audios | MaraKana Latin Jazz</title>
+    <meta name="description" content="Découvrez les vidéos et enregistrements audio de MaraKana Latin Jazz - Sessions studio, concerts live et extraits musicaux.">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CONFIGURATION DES COULEURS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        beige: '#F3F3F1',
+                        orange: '#FF6600',
+                        bleu: '#0077BE',
+                        black: '#000000',
+                        white: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- POLICES ET ICÔNES -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- STYLES PERSONNALISÉS -->
+    <style>
+        body { font-family: 'Manrope', sans-serif; background-color: #F3F3F1; color: #1A1A1A; overflow-x: hidden; }
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+
+        /* Animation d'apparition au scroll */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* YouTube Card Hover */
+        .youtube-card:hover {
+            background-color: #CD201F !important;
+            color: white !important;
+        }
+        .youtube-card:hover .youtube-icon,
+        .youtube-card:hover .youtube-icon svg {
+            color: white !important;
+            stroke: white !important;
+        }
+
+        /* Facebook Card Hover */
+        .facebook-card:hover {
+            background-color: #3b5998 !important;
+            color: white !important;
+        }
+        .facebook-card:hover .facebook-icon,
+        .facebook-card:hover .facebook-icon svg {
+            color: white !important;
+            stroke: white !important;
+            fill: white !important;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- HEADER FIXE NOIR -->
+    <header class="fixed top-0 w-full z-50 bg-black text-white px-6 py-4 flex justify-between items-center border-b border-white/10 shadow-lg">
+        <div class="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer font-serif hover:opacity-80 transition" onclick="window.location.href='index.html'">
+            MaraKana<span class="text-orange">.</span>
+        </div>
+
+        <div class="flex items-center gap-6">
+            <button onclick="toggleMenu()" class="text-white uppercase font-bold text-sm tracking-widest hover:text-orange transition-colors z-50 relative">
+                <span id="menu-text">MENU</span>
+            </button>
+            <button onclick="window.location.href='index.html#contact'" class="hidden md:block bg-orange text-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-black transition-colors text-sm uppercase tracking-widest">
+                Contact
+            </button>
+        </div>
+    </header>
+
+    <!-- MENU PLEIN ÉCRAN -->
+    <div id="fullscreen-menu" class="fixed inset-0 bg-beige z-40 flex flex-col items-center justify-center gap-8 transform -translate-y-full transition-transform duration-500">
+        <a href="index.html" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Accueil</a>
+        <a href="index.html#le-groupe" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Le Groupe</a>
+        <a href="index.html#repertoire" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Répertoire</a>
+        <a href="videos.html" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-orange italic">Vidéos & Audios</a>
+        <a href="index.html#agenda" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Agenda</a>
+        <a href="index.html#contact" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Contact</a>
+    </div>
+
+    <!-- SECTION HERO -->
+    <section class="min-h-[50vh] pt-32 pb-12 px-6 md:px-12 flex flex-col justify-center border-b border-black bg-beige">
+        <div class="reveal text-center">
+            <h2 class="text-bleu font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base">Écoutez • Voyagez • Dansez</h2>
+            <h1 class="text-6xl md:text-9xl font-serif leading-[0.9] text-black mb-8">
+                Vidéos & <span class="italic text-orange">Audios</span>
+            </h1>
+            <p class="text-gray-700 text-lg max-w-2xl mx-auto">
+                Découvrez nos sessions studio, concerts live et extraits de répétitions
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION VIDÉOS -->
+    <section class="py-24 px-6 md:px-12 reveal">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl md:text-7xl font-serif mb-4">Vidéos</h2>
+            <p class="text-xl italic text-bleu">Nos performances en images</p>
+        </div>
+
+        <div class="max-w-6xl mx-auto space-y-16">
+
+            <!-- VIDÉO 1: But Not For Me -->
+            <div class="border border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)]">
+                <div class="aspect-video bg-black mb-6">
+                    <video controls class="w-full h-full">
+                        <source src="assets/videos/but-not-for-me-1080p.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+                <h3 class="text-2xl font-serif mb-2">But Not For Me (Chet Baker)</h3>
+                <p class="text-gray-600">Jazz Standard • Session Studio</p>
+            </div>
+
+            <!-- VIDÉO 2: Night In Tunisia -->
+            <div class="border border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)]">
+                <div class="aspect-video bg-black mb-6">
+                    <video controls class="w-full h-full">
+                        <source src="assets/videos/night-in-tunisia.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+                <h3 class="text-2xl font-serif mb-2">A Night In Tunisia (Dizzy Gillespie)</h3>
+                <p class="text-gray-600">Jazz Standard • Session Studio</p>
+            </div>
+
+            <!-- VIDÉO 3: Partido Alto 2 -->
+            <div class="border border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)]">
+                <div class="aspect-video bg-black mb-6">
+                    <video controls class="w-full h-full">
+                        <source src="assets/videos/partido-alto-2-1080p.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+                <h3 class="text-2xl font-serif mb-2">Partido Alto 2 (J. Beltrami)</h3>
+                <p class="text-gray-600">Musique Brésilienne • Session Studio</p>
+            </div>
+
+            <!-- VIDÉO 4: Recado Bossa Nova -->
+            <div class="border border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)]">
+                <div class="aspect-video bg-black mb-6">
+                    <video controls class="w-full h-full">
+                        <source src="assets/videos/recado-bossa-nova.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+                <h3 class="text-2xl font-serif mb-2">Recado Bossa Nova (Djalma Ferreira)</h3>
+                <p class="text-gray-600">Bossa Nova • Session Studio</p>
+            </div>
+
+            <!-- VIDÉO 5: But Not For Me 4K -->
+            <div class="border border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)]">
+                <div class="aspect-video bg-black mb-6">
+                    <video controls class="w-full h-full">
+                        <source src="assets/videos/but-not-for-me-4k.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+                <h3 class="text-2xl font-serif mb-2">But Not For Me (Version 4K)</h3>
+                <p class="text-gray-600">Jazz Standard • Session Red Studio • Haute Qualité</p>
+            </div>
+
+            <!-- VIDÉO 6: Partido Alto 2 4K -->
+            <div class="border border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)]">
+                <div class="aspect-video bg-black mb-6">
+                    <video controls class="w-full h-full">
+                        <source src="assets/videos/partido-alto-2-4k.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+                <h3 class="text-2xl font-serif mb-2">Partido Alto 2 (Version 4K)</h3>
+                <p class="text-gray-600">Musique Brésilienne • Session Red Studio • Haute Qualité</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION AUDIOS -->
+    <section class="py-24 px-6 md:px-12 bg-white border-y border-black reveal">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl md:text-7xl font-serif mb-4">Extraits Audio</h2>
+            <p class="text-xl italic text-bleu">(bientôt disponible)</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto space-y-6">
+
+            <!-- AUDIO PLAYER 1 -->
+            <div class="border border-black bg-beige p-6 flex items-center gap-6 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all">
+                <div class="flex-shrink-0 w-16 h-16 bg-orange rounded-full flex items-center justify-center">
+                    <i data-lucide="music" class="w-8 h-8 text-white"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-serif text-xl mb-2">Triste (Jobim)</h3>
+                    <p class="text-sm text-gray-600 mb-3">Bossa Nova • Extrait Studio</p>
+                    <audio controls class="w-full">
+                        <source src="audio/triste.mp3" type="audio/mpeg">
+                        Votre navigateur ne supporte pas l'élément audio.
+                    </audio>
+                </div>
+            </div>
+
+            <!-- AUDIO PLAYER 2 -->
+            <div class="border border-black bg-beige p-6 flex items-center gap-6 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all">
+                <div class="flex-shrink-0 w-16 h-16 bg-bleu rounded-full flex items-center justify-center">
+                    <i data-lucide="music" class="w-8 h-8 text-white"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-serif text-xl mb-2">Cap Verdean Blues</h3>
+                    <p class="text-sm text-gray-600 mb-3">Jazz • Extrait Studio</p>
+                    <audio controls class="w-full">
+                        <source src="audio/cap-verdean.mp3" type="audio/mpeg">
+                        Votre navigateur ne supporte pas l'élément audio.
+                    </audio>
+                </div>
+            </div>
+
+            <!-- AUDIO PLAYER 3 -->
+            <div class="border border-black bg-beige p-6 flex items-center gap-6 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all">
+                <div class="flex-shrink-0 w-16 h-16 bg-orange rounded-full flex items-center justify-center">
+                    <i data-lucide="music" class="w-8 h-8 text-white"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-serif text-xl mb-2">But Not For Me</h3>
+                    <p class="text-sm text-gray-600 mb-3">Jazz Standard • Live</p>
+                    <audio controls class="w-full">
+                        <source src="audio/but-not-for-me.mp3" type="audio/mpeg">
+                        Votre navigateur ne supporte pas l'élément audio.
+                    </audio>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION STREAMING -->
+    <section class="py-24 px-6 md:px-12 reveal">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl md:text-7xl font-serif mb-4">Streaming</h2>
+            <p class="text-xl italic text-bleu">Suivez-nous sur vos plateformes préférées</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- YOUTUBE -->
+            <a href="https://www.youtube.com/@brunosauve6155" target="_blank" rel="noopener noreferrer" class="youtube-card border border-black bg-white p-8 text-center transition-all" style="transition: all 0.3s;">
+                <div class="youtube-icon" style="color: #CD201F;">
+                    <i data-lucide="youtube" class="w-16 h-16 mx-auto mb-4"></i>
+                </div>
+                <h3 class="text-2xl font-serif mb-2">YouTube</h3>
+                <p class="text-sm">@brunosauve6155</p>
+            </a>
+
+            <!-- FACEBOOK -->
+            <a href="https://www.facebook.com/p/MaraKana-latin-jazz-61560077231411/" target="_blank" rel="noopener noreferrer" class="facebook-card border border-black bg-white p-8 text-center transition-all" style="transition: all 0.3s;">
+                <div class="facebook-icon" style="color: #3b5998;">
+                    <i data-lucide="facebook" class="w-16 h-16 mx-auto mb-4"></i>
+                </div>
+                <h3 class="text-2xl font-serif mb-2">Facebook</h3>
+                <p class="text-sm">MaraKana Latin Jazz</p>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- CTA CONTACT -->
+    <section class="bg-black text-white py-16 px-6 text-center reveal">
+        <h3 class="text-3xl font-serif mb-4">Une question ? Envie de nous voir en concert ?</h3>
+        <p class="text-gray-400 mb-8">Contactez-nous pour vos événements, mariages ou festivals</p>
+        <a href="index.html#contact" class="inline-block bg-orange text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-colors text-sm uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]">
+            Contactez-nous
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-12 px-6 md:px-12 text-center md:text-left border-t border-white/10">
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-end gap-8">
+            <div class="text-center md:text-left">
+                <div class="text-4xl font-serif font-bold mb-2">
+                     MaraKana<span class="text-orange">.</span>
+                </div>
+                <p class="text-sm opacity-50">Latin Jazz • Bordeaux • Rayonnement : Nouvelle-Aquitaine et France (selon événement)</p>
+            </div>
+            <div class="flex gap-6 justify-center">
+                <a href="https://www.facebook.com/p/MaraKana-latin-jazz-61560077231411/" target="_blank" rel="noopener noreferrer" class="hover:text-orange transition-colors"><i data-lucide="facebook"></i></a>
+                <a href="https://www.youtube.com/@brunosauve6155" target="_blank" rel="noopener noreferrer" class="hover:text-orange transition-colors"><i data-lucide="youtube"></i></a>
+            </div>
+            <div class="text-center md:text-right text-sm opacity-50">
+                <p>© 2025 MaraKana Latin Jazz.</p>
+                <p>Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        // Initialiser les icônes Lucide
+        lucide.createIcons();
+
+        // Gestion du Menu Mobile
+        let isMenuOpen = false;
+        const menu = document.getElementById('fullscreen-menu');
+        const menuText = document.getElementById('menu-text');
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                menu.classList.remove('-translate-y-full');
+                menuText.innerText = "FERMER";
+                menuText.style.color = "black";
+            } else {
+                menu.classList.add('-translate-y-full');
+                menuText.innerText = "MENU";
+                menuText.style.color = "white";
+            }
+        }
+
+        // Animation au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
