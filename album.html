@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convergences - Album 2026 | MaraKana Latin Jazz</title>
+    <meta name="description"
+        content="Découvrez Convergences, le premier album de MaraKana Latin Jazz - 8 titres enregistrés live au Red Studio. Écoutez sur Spotify, Deezer et YouTube.">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CONFIGURATION DES COULEURS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        beige: '#F3F3F1',
+                        orange: '#FF6600',
+                        bleu: '#0077BE',
+                        black: '#000000',
+                        white: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- POLICES ET ICÔNES -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- STYLES PERSONNALISÉS -->
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #F3F3F1;
+            color: #1A1A1A;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Animation d'apparition au scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Track hover */
+        .track-row:hover {
+            background-color: rgba(255, 102, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- HEADER FIXE NOIR -->
+    <header
+        class="fixed top-0 w-full z-50 bg-black text-white px-6 py-4 flex justify-between items-center border-b border-white/10 shadow-lg">
+        <div class="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer font-serif hover:opacity-80 transition"
+            onclick="window.location.href='index.html'">
+            MaraKana<span class="text-orange">.</span>
+        </div>
+
+        <div class="flex items-center gap-6">
+            <button onclick="toggleMenu()"
+                class="text-white uppercase font-bold text-sm tracking-widest hover:text-orange transition-colors z-50 relative">
+                <span id="menu-text">MENU</span>
+            </button>
+            <button onclick="window.location.href='index.html#contact'"
+                class="hidden md:block bg-orange text-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-black transition-colors text-sm uppercase tracking-widest">
+                Contact
+            </button>
+        </div>
+    </header>
+
+    <!-- MENU PLEIN ÉCRAN -->
+    <div id="fullscreen-menu"
+        class="fixed inset-0 bg-beige z-40 flex flex-col items-center justify-center gap-8 transform -translate-y-full transition-transform duration-500">
+        <a href="index.html" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Accueil</a>
+        <a href="album.html" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-orange italic">Album</a>
+        <a href="index.html#le-groupe" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Le
+            Groupe</a>
+        <a href="videos.html" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Vidéos &
+            Audios</a>
+        <a href="index.html#agenda" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Agenda</a>
+        <a href="index.html#contact" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Contact</a>
+    </div>
+
+    <!-- SECTION HERO ALBUM -->
+    <section class="min-h-[70vh] pt-24 pb-12 px-6 md:px-12 flex items-center border-b border-black bg-black text-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center reveal">
+            <!-- Cover -->
+            <div class="relative group">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-orange to-bleu transform rotate-2 scale-105 opacity-30">
+                </div>
+                <img src="assets/images/album/convergences-cover.jpeg"
+                    alt="Convergences - MaraKana Latin Jazz - Album 2026"
+                    class="relative w-full h-auto border-4 border-white shadow-2xl">
+            </div>
+            <!-- Info -->
+            <div class="text-center md:text-left">
+                <p class="text-orange uppercase tracking-[0.3em] font-bold text-sm mb-4">Album 2026</p>
+                <h1 class="text-6xl md:text-8xl font-serif mb-6">
+                    <span class="italic">Convergences</span>
+                </h1>
+                <p class="text-xl text-white/70 mb-8">
+                    8 titres • 42 minutes<br>
+                    Enregistré live au Red Studio, Le Porge (France)
+                </p>
+                <!-- Boutons streaming -->
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="https://open.spotify.com/intl-fr/album/7BlxTYMzkwo8uePmGIjG8K" target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-2 bg-[#1DB954] text-white px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:scale-105 transition-transform cursor-pointer">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                        </svg>
+                        Spotify
+                    </a>
+                    <a href="https://link.deezer.com/s/32iJGBZy4IJpJrgoCOs90" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-2 bg-[#A238FF] text-white px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:scale-105 transition-transform cursor-pointer">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M18.81 11.12h4.19v1.69h-4.19v-1.69zm0 2.81h4.19v1.69h-4.19v-1.69zm0 2.82h4.19v1.68h-4.19v-1.68zm0-8.44h4.19v1.69h-4.19V8.31zm-5.75 5.62h4.19v1.69h-4.19v-1.69zm0 2.82h4.19v1.68h-4.19v-1.68zm-5.75 0h4.19v1.68H7.31v-1.68zm0-2.82h4.19v1.69H7.31v-1.69zm5.75-2.81h4.19v1.69h-4.19v-1.69zM1 16.75h4.19v1.68H1v-1.68z" />
+                        </svg>
+                        Deezer
+                    </a>
+                    <a href="https://youtube.com/playlist?list=PLzdOPlz5qRGa4bmT34zy5v63LaAW2DzIi&si=jFbUUxlZ9fpQJ_Tg"
+                        target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-2 bg-[#c4302b] text-white px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:scale-105 transition-transform cursor-pointer">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                        YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPOTIFY EMBED COMPLET -->
+    <section class="py-16 px-6 md:px-12 reveal">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-serif text-center mb-8">Écouter <span
+                    class="italic text-orange">l'album</span></h2>
+            <div class="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <iframe style="border-radius:0"
+                    src="https://open.spotify.com/embed/album/7BlxTYMzkwo8uePmGIjG8K?utm_source=generator&theme=0"
+                    width="100%" height="450" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRACKLIST DÉTAILLÉE -->
+    <section class="py-16 px-6 md:px-12 bg-white border-y border-black reveal">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-serif text-center mb-12">Tracklist</h2>
+
+            <div class="space-y-0 border border-black">
+                <!-- Track 1 -->
+                <div
+                    class="track-row grid grid-cols-12 gap-4 p-4 border-b border-black/20 items-center transition-colors">
+                    <div class="col-span-1 text-2xl font-serif text-orange font-bold">01</div>
+                    <div class="col-span-8 md:col-span-9">
+                        <h3 class="font-bold text-lg">Partido Alto 2</h3>
+                        <p class="text-sm text-black/60">José Beltrami</p>
+                    </div>
+                    <div class="col-span-3 md:col-span-2 text-right text-orange font-bold">4'31</div>
+                </div>
+
+                <!-- Track 2 -->
+                <div
+                    class="track-row grid grid-cols-12 gap-4 p-4 border-b border-black/20 items-center transition-colors">
+                    <div class="col-span-1 text-2xl font-serif text-orange font-bold">02</div>
+                    <div class="col-span-8 md:col-span-9">
+                        <h3 class="font-bold text-lg">Little Sunflower</h3>
+                        <p class="text-sm text-black/60">Freddie Hubbard</p>
+                    </div>
+                    <div class="col-span-3 md:col-span-2 text-right text-orange font-bold">7'33</div>
+                </div>
+
+                <!-- Track 3 -->
+                <div
+                    class="track-row grid grid-cols-12 gap-4 p-4 border-b border-black/20 items-center transition-colors">
+                    <div class="col-span-1 text-2xl font-serif text-orange font-bold">03</div>
+                    <div class="col-span-8 md:col-span-9">
+                        <h3 class="font-bold text-lg">But Not For Me</h3>
+                        <p class="text-sm text-black/60">Chet Baker</p>
+                    </div>
+                    <div class="col-span-3 md:col-span-2 text-right text-orange font-bold">4'30</div>
+                </div>
+
+                <!-- Track 4 -->
+                <div
+                    class="track-row grid grid-cols-12 gap-4 p-4 border-b border-black/20 items-center transition-colors">
+                    <div class="col-span-1 text-2xl font-serif text-orange font-bold">04</div>
+                    <div class="col-span-8 md:col-span-9">
+                        <h3 class="font-bold text-lg">Avec le temps</h3>
+                        <p class="text-sm text-black/60">Léo Ferré</p>
+                    </div>
+                    <div class="col-span-3 md:col-span-2 text-right text-orange font-bold">4'24</div>
+                </div>
+
+                <!-- Track 5 -->
+                <div
+                    class="track-row grid grid-cols-12 gap-4 p-4 border-b border-black/20 items-center transition-colors">
+                    <div class="col-span-1 text-2xl font-serif text-orange font-bold">05</div>
+                    <div class="col-span-8 md:col-span-9">
+                        <h3 class="font-bold text-lg">A Night in Tunisia</h3>
+                        <p class="text-sm text-black/60">Dizzy Gillespie</p>
+                    </div>
+                    <div class="col-span-3 md:col-span-2 text-right text-orange font-bold">6'05</div>
+                </div>
+
+                <!-- Track 6 -->
+                <div
+                    class="track-row grid grid-cols-12 gap-4 p-4 border-b border-black/20 items-center transition-colors">
+                    <div class="col-span-1 text-2xl font-serif text-orange font-bold">06</div>
+                    <div class="col-span-8 md:col-span-9">
+                        <h3 class="font-bold text-lg">Recado Bossa Nova</h3>
+                        <p class="text-sm text-black/60">Djalma Ferreira</p>
+                    </div>
+                    <div class="col-span-3 md:col-span-2 text-right text-orange font-bold">4'04</div>
+                </div>
+
+                <!-- Track 7 -->
+                <div
+                    class="track-row grid grid-cols-12 gap-4 p-4 border-b border-black/20 items-center transition-colors">
+                    <div class="col-span-1 text-2xl font-serif text-orange font-bold">07</div>
+                    <div class="col-span-8 md:col-span-9">
+                        <h3 class="font-bold text-lg">Triste</h3>
+                        <p class="text-sm text-black/60">Tom Jobim</p>
+                    </div>
+                    <div class="col-span-3 md:col-span-2 text-right text-orange font-bold">5'03</div>
+                </div>
+
+                <!-- Track 8 -->
+                <div class="track-row grid grid-cols-12 gap-4 p-4 items-center transition-colors">
+                    <div class="col-span-1 text-2xl font-serif text-orange font-bold">08</div>
+                    <div class="col-span-8 md:col-span-9">
+                        <h3 class="font-bold text-lg">Cap Verdean Blues</h3>
+                        <p class="text-sm text-black/60">Horace Silver</p>
+                    </div>
+                    <div class="col-span-3 md:col-span-2 text-right text-orange font-bold">5'31</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTES DE PRODUCTION -->
+    <section class="py-16 px-6 md:px-12 reveal">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-serif text-center mb-12">Notes de <span
+                    class="italic text-bleu">production</span></h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- À propos de l'album -->
+                <div class="bg-white border border-black p-8">
+                    <h3 class="text-2xl font-serif mb-4 flex items-center gap-2">
+                        <i data-lucide="disc-3" class="w-6 h-6 text-orange"></i>
+                        À propos de Convergences
+                    </h3>
+                    <p class="text-black/70 leading-relaxed mb-4">
+                        <em>Convergences</em> est le fruit de plusieurs années de travail et de complicité musicale.
+                        Cet album capture l'essence même de MaraKana : la rencontre entre le jazz traditionnel
+                        et les rythmes chaleureux de la musique latine et brésilienne.
+                    </p>
+                    <p class="text-black/70 leading-relaxed">
+                        Enregistré en conditions live pour préserver l'énergie et l'interaction entre les musiciens,
+                        chaque titre témoigne de notre passion commune pour ces musiques qui font voyager.
+                    </p>
+                </div>
+
+                <!-- Le Red Studio -->
+                <div class="bg-white border border-black p-8">
+                    <h3 class="text-2xl font-serif mb-4 flex items-center gap-2">
+                        <i data-lucide="mic-2" class="w-6 h-6 text-bleu"></i>
+                        Le Red Studio
+                    </h3>
+                    <p class="text-black/70 leading-relaxed mb-4">
+                        L'album a été enregistré au <a href="https://www.redstudio-bassin.fr/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="font-bold underline hover:text-orange transition-colors">Red Studio</a>, situé au
+                        Porge près de Bordeaux.
+                        Ce studio offre une acoustique naturelle idéale pour capturer le son organique
+                        d'un sextet en pleine action.
+                    </p>
+                    <p class="text-black/70 leading-relaxed">
+                        La prise de son et le mixage ont été réalisés par <strong>Julien Lasserre</strong>,
+                        ingénieur du son expérimenté qui a su retranscrire fidèlement l'atmosphère
+                        de nos sessions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Crédits complets -->
+            <div class="mt-8 bg-black text-white p-8 border border-black">
+                <h3 class="text-2xl font-serif mb-6 text-center">Crédits</h3>
+                <div class="grid md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                        <p class="text-orange font-bold uppercase tracking-wider mb-2">Musiciens</p>
+                        <ul class="space-y-1 text-white/80">
+                            <li><strong>Bruno Sauvé</strong> - Batterie, Percussions</li>
+                            <li><strong>Olivier Lorang</strong> - Contrebasse</li>
+                            <li><strong>Patrick Leyrat</strong> - Congas, Percussions</li>
+                            <li><strong>Jérôme Music</strong> - Trompette, Bugle</li>
+                            <li><strong>Nicolas Music</strong> - Piano</li>
+                            <li><strong>Michaela Slavikova</strong> - Flûte traversière</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-orange font-bold uppercase tracking-wider mb-2">Production</p>
+                        <ul class="space-y-1 text-white/80">
+                            <li><strong>Producteur</strong> - Bruno Sauvé</li>
+                            <li><strong>Prise de son & Mixage</strong> - Julien Lasserre</li>
+                            <li><strong>Studio</strong> - Red Studio, Le Porge (France)</li>
+                            <li><strong>Année</strong> - 2026</li>
+                            <li><strong>Label</strong> - MaraKana Latin Jazz</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA CONTACT -->
+    <section class="bg-gradient-to-br from-orange to-bleu text-white py-16 px-6 text-center reveal">
+        <h3 class="text-3xl md:text-4xl font-serif mb-4">Envie de nous voir en concert ?</h3>
+        <p class="text-white/80 mb-8 max-w-xl mx-auto">
+            MaraKana Latin Jazz se produit lors de festivals, mariages, événements d'entreprise
+            et soirées privées dans toute la Nouvelle-Aquitaine et au-delà.
+        </p>
+        <a href="index.html#contact"
+            class="inline-block bg-white text-black px-12 py-4 rounded-full font-bold hover:bg-black hover:text-white transition-colors text-sm uppercase tracking-widest shadow-xl">
+            <span class="flex items-center gap-2">
+                <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                Réserver une prestation
+            </span>
+        </a>
+    </section>
+
+    <!-- PLAYER AUDIO FLOTTANT -->
+    <div id="audio-player" class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleAudio()"
+            class="group relative w-20 h-20 md:w-24 md:h-24 cursor-pointer focus:outline-none"
+            aria-label="Jouer/Pause la musique">
+            <div id="vinyl-disc"
+                class="absolute inset-0 rounded-full bg-gradient-to-br from-black via-gray-900 to-black border-4 border-orange shadow-2xl transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-2 rounded-full border border-white/10"></div>
+                <div class="absolute inset-4 rounded-full border border-white/5"></div>
+                <div class="absolute inset-6 rounded-full border border-white/10"></div>
+                <div
+                    class="absolute inset-0 m-auto w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-orange to-yellow-500 flex items-center justify-center shadow-inner">
+                    <div class="w-2 h-2 rounded-full bg-black"></div>
+                </div>
+            </div>
+            <div id="play-icon"
+                class="absolute inset-0 flex items-center justify-center text-white/80 group-hover:text-white transition-colors">
+                <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+            </div>
+            <div id="pause-icon"
+                class="absolute inset-0 hidden items-center justify-center text-white/80 group-hover:text-white transition-colors">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                </svg>
+            </div>
+        </button>
+        <div id="track-info"
+            class="hidden absolute bottom-full right-0 mb-2 bg-black text-white px-4 py-2 rounded-lg shadow-xl text-sm whitespace-nowrap border border-orange/30">
+            <p class="font-bold text-orange">♪ Triste</p>
+            <p class="text-white/70 text-xs">Tom Jobim - MaraKana</p>
+        </div>
+    </div>
+    <audio id="background-audio" src="assets/audio/Triste - Marakana.mp3" preload="auto"></audio>
+
+    <style>
+        @keyframes spin-vinyl {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .vinyl-spinning {
+            animation: spin-vinyl 3s linear infinite;
+        }
+    </style>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-12 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <!-- Navigation Footer -->
+            <nav class="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-8 text-sm">
+                <a href="index.html" class="hover:text-orange transition-colors">Accueil</a>
+                <a href="album.html" class="text-orange">Album</a>
+                <a href="index.html#le-groupe" class="hover:text-orange transition-colors">Le Groupe</a>
+                <a href="index.html#repertoire" class="hover:text-orange transition-colors">Répertoire</a>
+                <a href="videos.html" class="hover:text-orange transition-colors">Vidéos & Audios</a>
+                <a href="index.html#agenda" class="hover:text-orange transition-colors">Agenda</a>
+                <a href="index.html#contact" class="hover:text-orange transition-colors">Contact</a>
+            </nav>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 pt-8 border-t border-white/10">
+                <div class="text-center md:text-left">
+                    <div class="text-4xl font-serif font-bold mb-2">
+                        MaraKana<span class="text-orange">.</span>
+                    </div>
+                    <p class="text-sm opacity-50">Latin Jazz • Bordeaux • Nouvelle-Aquitaine</p>
+                </div>
+                <div class="flex gap-6 justify-center">
+                    <a href="https://www.facebook.com/p/MaraKana-latin-jazz-61560077231411/" target="_blank"
+                        rel="noopener noreferrer" class="hover:text-[#1877F2] transition-colors"><i
+                            data-lucide="facebook"></i></a>
+                    <a href="https://www.youtube.com/@brunosauve6155" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-[#c4302b] transition-colors"><i data-lucide="youtube"></i></a>
+                    <a href="https://open.spotify.com/intl-fr/album/7BlxTYMzkwo8uePmGIjG8K" target="_blank"
+                        rel="noopener noreferrer" class="hover:text-[#1db954] transition-colors" title="Spotify">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                        </svg>
+                    </a>
+                    <a href="https://link.deezer.com/s/32iJGBZy4IJpJrgoCOs90" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-[#A238FF] transition-colors" title="Deezer">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M18.81 11.12h4.19v1.69h-4.19v-1.69zm0 2.81h4.19v1.69h-4.19v-1.69zm0 2.82h4.19v1.68h-4.19v-1.68zm0-8.44h4.19v1.69h-4.19V8.31zm-5.75 5.62h4.19v1.69h-4.19v-1.69zm0 2.82h4.19v1.68h-4.19v-1.68zm-5.75 0h4.19v1.68H7.31v-1.68zm0-2.82h4.19v1.69H7.31v-1.69zm5.75-2.81h4.19v1.69h-4.19v-1.69zM1 16.75h4.19v1.68H1v-1.68z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="text-center md:text-right text-sm opacity-50">
+                    <p>© 2026 MaraKana Latin Jazz.</p>
+                    <p>Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        // Initialiser les icônes Lucide
+        lucide.createIcons();
+
+        // Gestion du Menu Mobile
+        let isMenuOpen = false;
+        const menu = document.getElementById('fullscreen-menu');
+        const menuText = document.getElementById('menu-text');
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                menu.classList.remove('-translate-y-full');
+                menuText.innerText = "FERMER";
+                menuText.style.color = "black";
+            } else {
+                menu.classList.add('-translate-y-full');
+                menuText.innerText = "MENU";
+                menuText.style.color = "white";
+            }
+        }
+
+        // Animation au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Audio Player avec vinyle animé
+        let isPlaying = false;
+        const audio = document.getElementById('background-audio');
+        const vinylDisc = document.getElementById('vinyl-disc');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+        const trackInfo = document.getElementById('track-info');
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                vinylDisc.classList.remove('vinyl-spinning');
+                playIcon.classList.remove('hidden');
+                playIcon.classList.add('flex');
+                pauseIcon.classList.add('hidden');
+                pauseIcon.classList.remove('flex');
+                trackInfo.classList.add('hidden');
+            } else {
+                audio.play();
+                vinylDisc.classList.add('vinyl-spinning');
+                playIcon.classList.add('hidden');
+                playIcon.classList.remove('flex');
+                pauseIcon.classList.remove('hidden');
+                pauseIcon.classList.add('flex');
+                trackInfo.classList.remove('hidden');
+            }
+            isPlaying = !isPlaying;
+        }
+
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            vinylDisc.classList.remove('vinyl-spinning');
+            playIcon.classList.remove('hidden');
+            playIcon.classList.add('flex');
+            pauseIcon.classList.add('hidden');
+            pauseIcon.classList.remove('flex');
+            trackInfo.classList.add('hidden');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vidéos & Audios | MaraKana Latin Jazz</title>
-    <meta name="description" content="Découvrez les vidéos et enregistrements audio de MaraKana Latin Jazz - Sessions studio, concerts live et extraits musicaux.">
+    <meta name="description"
+        content="Découvrez les vidéos et enregistrements audio de MaraKana Latin Jazz - Sessions studio, concerts live et extraits musicaux.">
 
     <!-- FAVICON -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
@@ -36,23 +38,45 @@
     </script>
 
     <!-- POLICES ET ICÔNES -->
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- STYLES PERSONNALISÉS -->
     <style>
-        body { font-family: 'Manrope', sans-serif; background-color: #F3F3F1; color: #1A1A1A; overflow-x: hidden; }
-        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #F3F3F1;
+            color: #1A1A1A;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
 
         /* Animation d'apparition au scroll */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* YouTube Card Hover */
         .youtube-card:hover {
             background-color: #CD201F !important;
             color: white !important;
         }
+
         .youtube-card:hover .youtube-icon,
         .youtube-card:hover .youtube-icon svg {
             color: white !important;
@@ -64,6 +88,7 @@
             background-color: #3b5998 !important;
             color: white !important;
         }
+
         .facebook-card:hover .facebook-icon,
         .facebook-card:hover .facebook-icon svg {
             color: white !important;
@@ -72,38 +97,52 @@
         }
     </style>
 </head>
+
 <body class="antialiased">
 
     <!-- HEADER FIXE NOIR -->
-    <header class="fixed top-0 w-full z-50 bg-black text-white px-6 py-4 flex justify-between items-center border-b border-white/10 shadow-lg">
-        <div class="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer font-serif hover:opacity-80 transition" onclick="window.location.href='index.html'">
+    <header
+        class="fixed top-0 w-full z-50 bg-black text-white px-6 py-4 flex justify-between items-center border-b border-white/10 shadow-lg">
+        <div class="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer font-serif hover:opacity-80 transition"
+            onclick="window.location.href='index.html'">
             MaraKana<span class="text-orange">.</span>
         </div>
 
         <div class="flex items-center gap-6">
-            <button onclick="toggleMenu()" class="text-white uppercase font-bold text-sm tracking-widest hover:text-orange transition-colors z-50 relative">
+            <button onclick="toggleMenu()"
+                class="text-white uppercase font-bold text-sm tracking-widest hover:text-orange transition-colors z-50 relative">
                 <span id="menu-text">MENU</span>
             </button>
-            <button onclick="window.location.href='index.html#contact'" class="hidden md:block bg-orange text-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-black transition-colors text-sm uppercase tracking-widest">
+            <button onclick="window.location.href='index.html#contact'"
+                class="hidden md:block bg-orange text-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-black transition-colors text-sm uppercase tracking-widest">
                 Contact
             </button>
         </div>
     </header>
 
     <!-- MENU PLEIN ÉCRAN -->
-    <div id="fullscreen-menu" class="fixed inset-0 bg-beige z-40 flex flex-col items-center justify-center gap-8 transform -translate-y-full transition-transform duration-500">
-        <a href="index.html" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Accueil</a>
-        <a href="index.html#le-groupe" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Le Groupe</a>
-        <a href="index.html#repertoire" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Répertoire</a>
-        <a href="videos.html" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-orange italic">Vidéos & Audios</a>
-        <a href="index.html#agenda" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Agenda</a>
-        <a href="index.html#contact" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Contact</a>
+    <div id="fullscreen-menu"
+        class="fixed inset-0 bg-beige z-40 flex flex-col items-center justify-center gap-8 transform -translate-y-full transition-transform duration-500">
+        <a href="index.html" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Accueil</a>
+        <a href="index.html#le-groupe" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Le
+            Groupe</a>
+        <a href="index.html#repertoire" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Répertoire</a>
+        <a href="videos.html" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-orange italic">Vidéos &
+            Audios</a>
+        <a href="index.html#agenda" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Agenda</a>
+        <a href="index.html#contact" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Contact</a>
     </div>
 
     <!-- SECTION HERO -->
     <section class="min-h-[50vh] pt-32 pb-12 px-6 md:px-12 flex flex-col justify-center border-b border-black bg-beige">
         <div class="reveal text-center">
-            <h2 class="text-bleu font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base">Écoutez • Voyagez • Dansez</h2>
+            <h2 class="text-bleu font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base">Écoutez • Voyagez •
+                Dansez</h2>
             <h1 class="text-6xl md:text-9xl font-serif leading-[0.9] text-black mb-8">
                 Vidéos & <span class="italic text-orange">Audios</span>
             </h1>
@@ -125,7 +164,10 @@
             <!-- VIDÉO 1: But Not For Me -->
             <div class="border border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)]">
                 <div class="aspect-video bg-black mb-6">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/B0lHPZ3hkqY" title="But Not For Me (Chet Baker) - MaraKana Latin Jazz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/B0lHPZ3hkqY"
+                        title="But Not For Me (Chet Baker) - MaraKana Latin Jazz" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                 </div>
                 <h3 class="text-2xl font-serif mb-2">But Not For Me (Chet Baker)</h3>
                 <p class="text-gray-600">Jazz Standard • Session Studio</p>
@@ -134,7 +176,10 @@
             <!-- VIDÉO 2: A Night In Tunisia -->
             <div class="border border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)]">
                 <div class="aspect-video bg-black mb-6">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/Bo4gTDYAf44" title="A Night In Tunisia (Dizzy Gillespie) - MaraKana Latin Jazz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/Bo4gTDYAf44"
+                        title="A Night In Tunisia (Dizzy Gillespie) - MaraKana Latin Jazz" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                 </div>
                 <h3 class="text-2xl font-serif mb-2">A Night In Tunisia (Dizzy Gillespie)</h3>
                 <p class="text-gray-600">Jazz Standard • Session Studio</p>
@@ -143,7 +188,10 @@
             <!-- VIDÉO 3: Partido Alto 2 -->
             <div class="border border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)]">
                 <div class="aspect-video bg-black mb-6">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/3bIKZ2iPNf4" title="Partido Alto 2 (J. Beltrami) - MaraKana Latin Jazz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/3bIKZ2iPNf4"
+                        title="Partido Alto 2 (J. Beltrami) - MaraKana Latin Jazz" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                 </div>
                 <h3 class="text-2xl font-serif mb-2">Partido Alto 2 (J. Beltrami)</h3>
                 <p class="text-gray-600">Musique Brésilienne • Session Studio</p>
@@ -152,7 +200,10 @@
             <!-- VIDÉO 4: Recado Bossa Nova -->
             <div class="border border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)]">
                 <div class="aspect-video bg-black mb-6">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/uVPrjV52JTQ" title="Recado Bossa Nova (Djalma Ferreira) - MaraKana Latin Jazz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/uVPrjV52JTQ"
+                        title="Recado Bossa Nova (Djalma Ferreira) - MaraKana Latin Jazz" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                 </div>
                 <h3 class="text-2xl font-serif mb-2">Recado Bossa Nova (Djalma Ferreira)</h3>
                 <p class="text-gray-600">Bossa Nova • Session Studio</p>
@@ -161,7 +212,10 @@
             <!-- VIDÉO 5: Cape Verdean Blues -->
             <div class="border border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)]">
                 <div class="aspect-video bg-black mb-6">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/Uw0xxvOped8" title="Cape Verdean Blues - MaraKana Latin Jazz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/Uw0xxvOped8"
+                        title="Cape Verdean Blues - MaraKana Latin Jazz" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                 </div>
                 <h3 class="text-2xl font-serif mb-2">Cape Verdean Blues</h3>
                 <p class="text-gray-600">Latin Jazz • Session Studio</p>
@@ -170,7 +224,10 @@
             <!-- VIDÉO 6: Avec le temps -->
             <div class="border border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)]">
                 <div class="aspect-video bg-black mb-6">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/fJLPJ9DC3WE" title="Avec le temps (Léo Ferré) - MaraKana Latin Jazz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/fJLPJ9DC3WE"
+                        title="Avec le temps (Léo Ferré) - MaraKana Latin Jazz" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                 </div>
                 <h3 class="text-2xl font-serif mb-2">Avec le temps (Léo Ferré)</h3>
                 <p class="text-gray-600">Chanson Française • Session Studio</p>
@@ -188,7 +245,8 @@
         <div class="max-w-4xl mx-auto space-y-6">
 
             <!-- AUDIO PLAYER 1 -->
-            <div class="border border-black bg-beige p-6 flex items-center gap-6 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all">
+            <div
+                class="border border-black bg-beige p-6 flex items-center gap-6 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all">
                 <div class="flex-shrink-0 w-16 h-16 bg-orange rounded-full flex items-center justify-center">
                     <i data-lucide="music" class="w-8 h-8 text-white"></i>
                 </div>
@@ -196,7 +254,8 @@
                     <h3 class="font-serif text-xl mb-2">Little Sun Flower (Freddie Hubbard)</h3>
                     <p class="text-sm text-gray-600 mb-3">Jazz Standard • Extrait Studio</p>
                     <audio controls class="w-full">
-                        <source src="assets/audio/ Little Sun Flower ( Freddie Hubbard) - Marakana.mp3" type="audio/mpeg">
+                        <source src="assets/audio/ Little Sun Flower ( Freddie Hubbard) - Marakana.mp3"
+                            type="audio/mpeg">
                         Votre navigateur ne supporte pas l'élément audio.
                     </audio>
                 </div>
@@ -215,7 +274,9 @@
         <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
 
             <!-- YOUTUBE -->
-            <a href="https://www.youtube.com/@brunosauve6155" target="_blank" rel="noopener noreferrer" class="youtube-card border border-black bg-white p-8 text-center transition-all" style="transition: all 0.3s;">
+            <a href="https://www.youtube.com/@brunosauve6155" target="_blank" rel="noopener noreferrer"
+                class="youtube-card border border-black bg-white p-8 text-center transition-all"
+                style="transition: all 0.3s;">
                 <div class="youtube-icon" style="color: #CD201F;">
                     <i data-lucide="youtube" class="w-16 h-16 mx-auto mb-4"></i>
                 </div>
@@ -224,7 +285,10 @@
             </a>
 
             <!-- FACEBOOK -->
-            <a href="https://www.facebook.com/p/MaraKana-latin-jazz-61560077231411/" target="_blank" rel="noopener noreferrer" class="facebook-card border border-black bg-white p-8 text-center transition-all" style="transition: all 0.3s;">
+            <a href="https://www.facebook.com/p/MaraKana-latin-jazz-61560077231411/" target="_blank"
+                rel="noopener noreferrer"
+                class="facebook-card border border-black bg-white p-8 text-center transition-all"
+                style="transition: all 0.3s;">
                 <div class="facebook-icon" style="color: #3b5998;">
                     <i data-lucide="facebook" class="w-16 h-16 mx-auto mb-4"></i>
                 </div>
@@ -239,27 +303,111 @@
     <section class="bg-black text-white py-16 px-6 text-center reveal">
         <h3 class="text-3xl font-serif mb-4">Une question ? Envie de nous voir en concert ?</h3>
         <p class="text-gray-400 mb-8">Contactez-nous pour vos événements, mariages ou festivals</p>
-        <a href="index.html#contact" class="inline-block bg-orange text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-colors text-sm uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]">
+        <a href="index.html#contact"
+            class="inline-block bg-orange text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-colors text-sm uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]">
             Contactez-nous
         </a>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-black text-white py-12 px-6 md:px-12 text-center md:text-left border-t border-white/10">
-        <div class="flex flex-col md:flex-row justify-between items-center md:items-end gap-8">
-            <div class="text-center md:text-left">
-                <div class="text-4xl font-serif font-bold mb-2">
-                     MaraKana<span class="text-orange">.</span>
+    <!-- PLAYER AUDIO FLOTTANT -->
+    <div id="audio-player" class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleAudio()"
+            class="group relative w-20 h-20 md:w-24 md:h-24 cursor-pointer focus:outline-none"
+            aria-label="Jouer/Pause la musique">
+            <div id="vinyl-disc"
+                class="absolute inset-0 rounded-full bg-gradient-to-br from-black via-gray-900 to-black border-4 border-orange shadow-2xl transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-2 rounded-full border border-white/10"></div>
+                <div class="absolute inset-4 rounded-full border border-white/5"></div>
+                <div class="absolute inset-6 rounded-full border border-white/10"></div>
+                <div
+                    class="absolute inset-0 m-auto w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-orange to-yellow-500 flex items-center justify-center shadow-inner">
+                    <div class="w-2 h-2 rounded-full bg-black"></div>
                 </div>
-                <p class="text-sm opacity-50">Latin Jazz • Bordeaux • Rayonnement : Nouvelle-Aquitaine et France (selon événement)</p>
             </div>
-            <div class="flex gap-6 justify-center">
-                <a href="https://www.facebook.com/p/MaraKana-latin-jazz-61560077231411/" target="_blank" rel="noopener noreferrer" class="hover:text-orange transition-colors"><i data-lucide="facebook"></i></a>
-                <a href="https://www.youtube.com/@brunosauve6155" target="_blank" rel="noopener noreferrer" class="hover:text-orange transition-colors"><i data-lucide="youtube"></i></a>
+            <div id="play-icon"
+                class="absolute inset-0 flex items-center justify-center text-white/80 group-hover:text-white transition-colors">
+                <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
             </div>
-            <div class="text-center md:text-right text-sm opacity-50">
-                <p>© 2025 MaraKana Latin Jazz.</p>
-                <p>Tous droits réservés.</p>
+            <div id="pause-icon"
+                class="absolute inset-0 hidden items-center justify-center text-white/80 group-hover:text-white transition-colors">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                </svg>
+            </div>
+        </button>
+        <div id="track-info"
+            class="hidden absolute bottom-full right-0 mb-2 bg-black text-white px-4 py-2 rounded-lg shadow-xl text-sm whitespace-nowrap border border-orange/30">
+            <p class="font-bold text-orange">♪ Triste</p>
+            <p class="text-white/70 text-xs">Tom Jobim - MaraKana</p>
+        </div>
+    </div>
+    <audio id="background-audio" src="assets/audio/Triste - Marakana.mp3" preload="auto"></audio>
+
+    <style>
+        @keyframes spin-vinyl {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .vinyl-spinning {
+            animation: spin-vinyl 3s linear infinite;
+        }
+    </style>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-12 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <!-- Navigation Footer -->
+            <nav class="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-8 text-sm">
+                <a href="index.html" class="hover:text-orange transition-colors">Accueil</a>
+                <a href="album.html" class="hover:text-orange transition-colors">Album</a>
+                <a href="index.html#le-groupe" class="hover:text-orange transition-colors">Le Groupe</a>
+                <a href="index.html#repertoire" class="hover:text-orange transition-colors">Répertoire</a>
+                <a href="videos.html" class="text-orange">Vidéos & Audios</a>
+                <a href="index.html#agenda" class="hover:text-orange transition-colors">Agenda</a>
+                <a href="index.html#contact" class="hover:text-orange transition-colors">Contact</a>
+            </nav>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 pt-8 border-t border-white/10">
+                <div class="text-center md:text-left">
+                    <div class="text-4xl font-serif font-bold mb-2">
+                        MaraKana<span class="text-orange">.</span>
+                    </div>
+                    <p class="text-sm opacity-50">Latin Jazz • Bordeaux • Nouvelle-Aquitaine</p>
+                </div>
+                <div class="flex gap-6 justify-center">
+                    <a href="https://www.facebook.com/p/MaraKana-latin-jazz-61560077231411/" target="_blank"
+                        rel="noopener noreferrer" class="hover:text-[#1877F2] transition-colors"><i
+                            data-lucide="facebook"></i></a>
+                    <a href="https://www.youtube.com/@brunosauve6155" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-[#c4302b] transition-colors"><i data-lucide="youtube"></i></a>
+                    <a href="https://open.spotify.com/intl-fr/album/7BlxTYMzkwo8uePmGIjG8K" target="_blank"
+                        rel="noopener noreferrer" class="hover:text-[#1db954] transition-colors" title="Spotify">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                        </svg>
+                    </a>
+                    <a href="https://link.deezer.com/s/32iJGBZy4IJpJrgoCOs90" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-[#A238FF] transition-colors" title="Deezer">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M18.81 11.12h4.19v1.69h-4.19v-1.69zm0 2.81h4.19v1.69h-4.19v-1.69zm0 2.82h4.19v1.68h-4.19v-1.68zm0-8.44h4.19v1.69h-4.19V8.31zm-5.75 5.62h4.19v1.69h-4.19v-1.69zm0 2.82h4.19v1.68h-4.19v-1.68zm-5.75 0h4.19v1.68H7.31v-1.68zm0-2.82h4.19v1.69H7.31v-1.69zm5.75-2.81h4.19v1.69h-4.19v-1.69zM1 16.75h4.19v1.68H1v-1.68z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="text-center md:text-right text-sm opacity-50">
+                    <p>© 2026 MaraKana Latin Jazz.</p>
+                    <p>Tous droits réservés.</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -296,6 +444,46 @@
             });
         });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Audio Player avec vinyle animé
+        let isPlaying = false;
+        const audio = document.getElementById('background-audio');
+        const vinylDisc = document.getElementById('vinyl-disc');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+        const trackInfo = document.getElementById('track-info');
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                vinylDisc.classList.remove('vinyl-spinning');
+                playIcon.classList.remove('hidden');
+                playIcon.classList.add('flex');
+                pauseIcon.classList.add('hidden');
+                pauseIcon.classList.remove('flex');
+                trackInfo.classList.add('hidden');
+            } else {
+                audio.play();
+                vinylDisc.classList.add('vinyl-spinning');
+                playIcon.classList.add('hidden');
+                playIcon.classList.remove('flex');
+                pauseIcon.classList.remove('hidden');
+                pauseIcon.classList.add('flex');
+                trackInfo.classList.remove('hidden');
+            }
+            isPlaying = !isPlaying;
+        }
+
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            vinylDisc.classList.remove('vinyl-spinning');
+            playIcon.classList.remove('hidden');
+            playIcon.classList.add('flex');
+            pauseIcon.classList.add('hidden');
+            pauseIcon.classList.remove('flex');
+            trackInfo.classList.add('hidden');
+        });
     </script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,12 @@
     <title>MaraKana Latin Jazz | Groupe de Musique Brésilienne & Jazz à Bordeaux</title>
 
     <!-- DESCRIPTION : Le texte gris sous le lien (Max 160 caractères) -->
-    <meta name="description" content="Évadez-vous avec MaraKana, orchestre de Latin Jazz et Musique Brésilienne à Bordeaux (Sextet). Concerts, mariages et festivals en Gironde. Samba, Bossa & Salsa.">
+    <meta name="description"
+        content="Évadez-vous avec MaraKana, orchestre de Latin Jazz et Musique Brésilienne à Bordeaux (Sextet). Concerts, mariages et festivals en Gironde. Samba, Bossa & Salsa.">
 
     <!-- MOTS-CLÉS : Pour aider les moteurs de recherche -->
-    <meta name="keywords" content="Groupe musique Bordeaux, Latin Jazz Gironde, Jazz Brésilien, Orchestre mariage Bordeaux, Bossa Nova, Samba, Salsa, Concert Jazz, Bruno Sauvé, Animation musicale, Événement entreprise, Sextet Jazz, Musique Live 33">
+    <meta name="keywords"
+        content="Groupe musique Bordeaux, Latin Jazz Gironde, Jazz Brésilien, Orchestre mariage Bordeaux, Bossa Nova, Samba, Salsa, Concert Jazz, Bruno Sauvé, Animation musicale, Événement entreprise, Sextet Jazz, Musique Live 33">
 
     <!-- AUTEUR & GÉOLOCALISATION : Important pour le SEO local -->
     <meta name="author" content="MaraKana Latin Jazz">
@@ -27,7 +30,8 @@
     <meta property="og:url" content="https://www.marakana-jazz.com/">
     <meta property="og:site_name" content="MaraKana Latin Jazz">
     <meta property="og:title" content="MaraKana - Le soleil du Latin Jazz à Bordeaux">
-    <meta property="og:description" content="Découvrez notre Sextet : Samba, Bossa et Jazz pour vos événements. Écoutez, voyagez, dansez !">
+    <meta property="og:description"
+        content="Découvrez notre Sextet : Samba, Bossa et Jazz pour vos événements. Écoutez, voyagez, dansez !">
     <meta property="og:image" content="https://www.marakana-jazz.com/apple-touch-icon.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -93,14 +97,37 @@
       ],
       "sameAs": [
         "https://www.facebook.com/profile.php?id=100067085750278",
-        "https://www.youtube.com/marakanajazz"
-      ]
+        "https://www.youtube.com/marakanajazz",
+        "https://open.spotify.com/artist/7BlxTYMzkwo8uePmGIjG8K"
+      ],
+      "album": {
+        "@type": "MusicAlbum",
+        "name": "Convergences",
+        "datePublished": "2026",
+        "genre": ["Latin Jazz", "Bossa Nova", "Jazz"],
+        "numTracks": 8,
+        "duration": "PT42M",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "MaraKana Latin Jazz"
+        },
+        "track": [
+          {"@type": "MusicRecording", "name": "Partido Alto 2", "duration": "PT4M31S"},
+          {"@type": "MusicRecording", "name": "Little Sunflower", "duration": "PT7M33S"},
+          {"@type": "MusicRecording", "name": "But Not For Me", "duration": "PT4M30S"},
+          {"@type": "MusicRecording", "name": "Avec le temps", "duration": "PT4M24S"},
+          {"@type": "MusicRecording", "name": "A Night in Tunisia", "duration": "PT6M05S"},
+          {"@type": "MusicRecording", "name": "Recado Bossa Nova", "duration": "PT4M04S"},
+          {"@type": "MusicRecording", "name": "Triste", "duration": "PT5M03S"},
+          {"@type": "MusicRecording", "name": "Cap Verdean Blues", "duration": "PT5M31S"}
+        ]
+      }
     }
     </script>
 
     <!-- 1. CHARGEMENT DE TAILWIND CSS (Le Design) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- 2. CONFIGURATION DES COULEURS -->
     <script>
         tailwind.config = {
@@ -123,77 +150,167 @@
     </script>
 
     <!-- 3. CHARGEMENT DES POLICES ET ICÔNES -->
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- 4. STYLES PERSONNALISÉS (Animations) -->
     <style>
-        body { font-family: 'Manrope', sans-serif; background-color: #F3F3F1; color: #1A1A1A; overflow-x: hidden; }
-        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #F3F3F1;
+            color: #1A1A1A;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
 
         /* Animation Marquee (Texte qui défile) */
-        .marquee-container { overflow: hidden; white-space: nowrap; }
-        .marquee-content { display: inline-block; animation: marquee 20s linear infinite; }
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
 
         /* Animation d'apparition au scroll */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* Lightbox pour galerie */
-        .lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
-        .lightbox.active { display: flex; align-items: center; justify-content: center; }
-        .lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border: 2px solid white; }
-        .lightbox-close { position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; }
-        .lightbox-close:hover { color: #FF6600; }
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border: 2px solid white;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover {
+            color: #FF6600;
+        }
     </style>
 </head>
+
 <body class="antialiased">
 
     <!-- HEADER FIXE NOIR -->
-    <header class="fixed top-0 w-full z-50 bg-black text-white px-6 py-4 flex justify-between items-center border-b border-white/10 shadow-lg">
-        <div class="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer font-serif hover:opacity-80 transition" onclick="document.getElementById('hero').scrollIntoView({behavior: 'smooth'})">
+    <header
+        class="fixed top-0 w-full z-50 bg-black text-white px-6 py-4 flex justify-between items-center border-b border-white/10 shadow-lg">
+        <div class="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer font-serif hover:opacity-80 transition"
+            onclick="document.getElementById('hero').scrollIntoView({behavior: 'smooth'})">
             MaraKana<span class="text-orange">.</span>
         </div>
-        
+
         <div class="flex items-center gap-6">
             <!-- Menu Mobile Icon -->
-            <button onclick="toggleMenu()" class="text-white uppercase font-bold text-sm tracking-widest hover:text-orange transition-colors z-50 relative">
+            <button onclick="toggleMenu()"
+                class="text-white uppercase font-bold text-sm tracking-widest hover:text-orange transition-colors z-50 relative">
                 <span id="menu-text">MENU</span>
             </button>
-            <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="hidden md:block bg-orange text-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-black transition-colors text-sm uppercase tracking-widest">
+            <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
+                class="hidden md:block bg-orange text-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-black transition-colors text-sm uppercase tracking-widest">
                 Contact
             </button>
         </div>
     </header>
 
     <!-- MENU PLEIN ÉCRAN (Caché par défaut) -->
-    <div id="fullscreen-menu" class="fixed inset-0 bg-beige z-40 flex flex-col items-center justify-center gap-8 transform -translate-y-full transition-transform duration-500">
-        <a href="#hero" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Accueil</a>
-        <a href="#le-groupe" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Le Groupe</a>
-        <a href="#repertoire" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Répertoire</a>
-        <a href="videos.html" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Vidéos & Audios</a>
-        <a href="#agenda" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Agenda</a>
-        <a href="#contact" onclick="toggleMenu()" class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Contact</a>
+    <div id="fullscreen-menu"
+        class="fixed inset-0 bg-beige z-40 flex flex-col items-center justify-center gap-8 transform -translate-y-full transition-transform duration-500">
+        <a href="#hero" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Accueil</a>
+        <a href="album.html"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Album</a>
+        <a href="#le-groupe" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Le
+            Groupe</a>
+        <a href="#repertoire" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Répertoire</a>
+        <a href="videos.html"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Vidéos &
+            Audios</a>
+        <a href="#agenda" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Agenda</a>
+        <a href="#contact" onclick="toggleMenu()"
+            class="text-5xl md:text-7xl font-serif text-black hover:text-orange hover:italic transition-all">Contact</a>
     </div>
 
     <!-- SECTION HERO -->
-    <section id="hero" class="min-h-screen pt-32 px-6 md:px-12 flex flex-col justify-center relative border-b border-black">
+    <section id="hero"
+        class="min-h-screen pt-32 px-6 md:px-12 flex flex-col justify-center relative border-b border-black">
         <div class="reveal">
             <!-- IMAGE PRINCIPALE (GROUPE) - EN COULEUR PAR DÉFAUT -->
             <div class="w-full h-[40vh] md:h-[50vh] mb-8 overflow-hidden border border-black bg-gray-200 group">
-                <img src="assets/images/hero/Groupe Hero.jpg" class="w-full h-full object-cover object-top group-hover:grayscale transition-all duration-1000 scale-105 group-hover:scale-100" alt="MaraKana Live">
+                <img src="assets/images/hero/Groupe Hero.jpg"
+                    class="w-full h-full object-cover object-top group-hover:grayscale transition-all duration-1000 scale-105 group-hover:scale-100"
+                    alt="MaraKana Live">
             </div>
 
             <div class="flex flex-col md:flex-row items-end justify-between gap-8">
                 <div>
-                    <h2 class="text-orange font-bold tracking-[0.3em] uppercase mb-2 text-sm md:text-base">Latin Jazz</h2>
+                    <h2 class="text-orange font-bold tracking-[0.3em] uppercase mb-2 text-sm md:text-base">Latin Jazz
+                    </h2>
                     <h1 class="text-6xl md:text-9xl font-serif leading-[0.9] text-black">
                         Mara<span class="italic text-bleu">Kana</span>
                     </h1>
                 </div>
                 <div class="max-w-md text-lg leading-relaxed border-l-2 border-orange pl-6 mb-2">
-                    "Imaginez un instant : le soleil couchant sur Ipanema, une brise chaude qui porte les notes des cuivres..."
+                    "Imaginez un instant : le soleil couchant sur Ipanema, une brise chaude qui porte les notes des
+                    cuivres..."
                 </div>
             </div>
         </div>
@@ -202,9 +319,151 @@
     <!-- MARQUEE (BANDE DÉFILANTE) -->
     <div class="bg-black text-beige py-3 border-y border-white/10 marquee-container">
         <div class="marquee-content text-2xl md:text-4xl font-serif italic">
-            JAZZ • BOSSA NOVA • SALSA • SWING • CARIBBEAN • JAZZ • BOSSA NOVA • SALSA • SWING • CARIBBEAN • JAZZ • BOSSA NOVA • SALSA • SWING • CARIBBEAN •
+            JAZZ • BOSSA NOVA • SALSA • SWING • CARIBBEAN • JAZZ • BOSSA NOVA • SALSA • SWING • CARIBBEAN • JAZZ • BOSSA
+            NOVA • SALSA • SWING • CARIBBEAN •
         </div>
     </div>
+
+    <!-- SECTION ALBUM CONVERGENCES -->
+    <section id="album" class="py-16 md:py-24 px-6 md:px-12 border-b border-black reveal">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <p class="text-orange uppercase tracking-[0.3em] font-bold text-sm mb-4">Nouvel album 2026</p>
+                <h2 class="text-5xl md:text-7xl font-serif">
+                    <span class="italic">Convergences</span>
+                </h2>
+            </div>
+
+            <!-- Contenu en 2 colonnes -->
+            <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+                <!-- Colonne gauche : Cover avec effet -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-orange to-bleu transform rotate-3 scale-105 opacity-20">
+                    </div>
+                    <div
+                        class="relative border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+                        <img src="assets/images/album/convergences-cover.jpeg"
+                            alt="Convergences - MaraKana Latin Jazz - Album 2026"
+                            class="w-full h-auto transition-transform duration-700 group-hover:scale-105">
+                        <!-- Overlay au hover -->
+                        <div
+                            class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <p class="font-serif text-2xl italic mb-4">Écoutez l'album</p>
+                                <div class="flex gap-4 justify-center">
+                                    <a href="https://open.spotify.com/intl-fr/album/7BlxTYMzkwo8uePmGIjG8K"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="w-12 h-12 rounded-full bg-[#1DB954] flex items-center justify-center hover:scale-110 transition-transform cursor-pointer"
+                                        title="Spotify">
+                                        <svg class="w-6 h-6" fill="white" viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                                        </svg>
+                                    </a>
+                                    <a href="https://link.deezer.com/s/32iJGBZy4IJpJrgoCOs90" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="w-12 h-12 rounded-full bg-[#FF0092] flex items-center justify-center hover:scale-110 transition-transform cursor-pointer"
+                                        title="Deezer">
+                                        <svg class="w-6 h-6" fill="white" viewBox="0 0 24 24">
+                                            <path
+                                                d="M18.81 11.12h4.19v1.69h-4.19v-1.69zm0 2.81h4.19v1.69h-4.19v-1.69zm0 2.82h4.19v1.68h-4.19v-1.68zm0-8.44h4.19v1.69h-4.19V8.31zm-5.75 5.62h4.19v1.69h-4.19v-1.69zm0 2.82h4.19v1.68h-4.19v-1.68zm-5.75 0h4.19v1.68H7.31v-1.68zm0-2.82h4.19v1.69H7.31v-1.69zm5.75-2.81h4.19v1.69h-4.19v-1.69zM1 16.75h4.19v1.68H1v-1.68z" />
+                                        </svg>
+                                    </a>
+                                    <a href="https://youtube.com/playlist?list=PLzdOPlz5qRGa4bmT34zy5v63LaAW2DzIi&si=jFbUUxlZ9fpQJ_Tg"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="w-12 h-12 rounded-full bg-[#FF0000] flex items-center justify-center hover:scale-110 transition-transform cursor-pointer"
+                                        title="YouTube">
+                                        <svg class="w-6 h-6" fill="white" viewBox="0 0 24 24">
+                                            <path
+                                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne droite : Infos album -->
+                <div class="flex flex-col">
+                    <p class="text-lg md:text-xl text-black/70 mb-6 border-l-4 border-orange pl-4">
+                        42 min • 8 titres<br>
+                        <span class="text-sm">Enregistré live au <a href="https://www.redstudio-bassin.fr/"
+                                target="_blank" rel="noopener noreferrer" class="underline hover:text-orange">Red
+                                Studio</a>, Le Porge</span>
+                    </p>
+
+                    <!-- Boutons streaming -->
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <a href="https://open.spotify.com/intl-fr/album/7BlxTYMzkwo8uePmGIjG8K" target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center gap-2 bg-black text-white px-5 py-3 font-bold text-sm uppercase tracking-wider hover:bg-[#1db954] transition-colors cursor-pointer">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                            </svg>
+                            Spotify
+                        </a>
+                        <a href="https://link.deezer.com/s/32iJGBZy4IJpJrgoCOs90" target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center gap-2 bg-black text-white px-5 py-3 font-bold text-sm uppercase tracking-wider hover:bg-[#A238FF] transition-colors cursor-pointer">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.81 11.12h4.19v1.69h-4.19v-1.69zm0 2.81h4.19v1.69h-4.19v-1.69zm0 2.82h4.19v1.68h-4.19v-1.68zm0-8.44h4.19v1.69h-4.19V8.31zm-5.75 5.62h4.19v1.69h-4.19v-1.69zm0 2.82h4.19v1.68h-4.19v-1.68zm-5.75 0h4.19v1.68H7.31v-1.68zm0-2.82h4.19v1.69H7.31v-1.69zm5.75-2.81h4.19v1.69h-4.19v-1.69zM1 16.75h4.19v1.68H1v-1.68z" />
+                            </svg>
+                            Deezer
+                        </a>
+                        <a href="https://youtube.com/playlist?list=PLzdOPlz5qRGa4bmT34zy5v63LaAW2DzIi&si=jFbUUxlZ9fpQJ_Tg"
+                            target="_blank" rel="noopener noreferrer"
+                            class="flex items-center gap-2 bg-black text-white px-5 py-3 font-bold text-sm uppercase tracking-wider hover:bg-[#c4302b] transition-colors cursor-pointer">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                            YouTube
+                        </a>
+                    </div>
+
+                    <!-- Tracklist -->
+                    <details class="group mb-6 border border-black p-4 bg-white">
+                        <summary
+                            class="cursor-pointer flex items-center gap-2 text-black font-bold uppercase tracking-widest text-sm hover:text-orange transition-colors">
+                            <i data-lucide="disc-3" class="w-4 h-4"></i>
+                            Tracklist
+                            <i data-lucide="chevron-down"
+                                class="w-4 h-4 ml-auto transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <ol class="mt-4 space-y-2 text-black/80 pl-6 list-decimal text-sm">
+                            <li>Partido Alto 2 <span class="text-black/50">(José Beltrami)</span> <span
+                                    class="text-orange font-bold">4'31</span></li>
+                            <li>Little Sunflower <span class="text-black/50">(Freddie Hubbard)</span> <span
+                                    class="text-orange font-bold">7'33</span></li>
+                            <li>But Not For Me <span class="text-black/50">(Chet Baker)</span> <span
+                                    class="text-orange font-bold">4'30</span></li>
+                            <li>Avec le temps <span class="text-black/50">(Léo Ferré)</span> <span
+                                    class="text-orange font-bold">4'24</span></li>
+                            <li>A Night in Tunisia <span class="text-black/50">(Dizzy Gillespie)</span> <span
+                                    class="text-orange font-bold">6'05</span></li>
+                            <li>Recado Bossa Nova <span class="text-black/50">(Djalma Ferreira)</span> <span
+                                    class="text-orange font-bold">4'04</span></li>
+                            <li>Triste <span class="text-black/50">(Tom Jobim)</span> <span
+                                    class="text-orange font-bold">5'03</span></li>
+                            <li>Cap Verdean Blues <span class="text-black/50">(Horace Silver)</span> <span
+                                    class="text-orange font-bold">5'31</span></li>
+                        </ol>
+                    </details>
+
+                    <!-- Crédits -->
+                    <div class="text-sm text-black/60 border-t border-black/20 pt-4">
+                        <p><span class="font-bold">Mixage :</span> Julien Lasserre @ Red Studio</p>
+                        <p><span class="font-bold">Production :</span> Bruno Sauvé / MaraKana</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- SECTION LE GROUPE -->
     <section id="le-groupe" class="py-24 px-6 md:px-12">
@@ -217,77 +476,114 @@
                     <div class="bg-beige p-12 md:p-16">
                         <div class="text-6xl md:text-8xl text-orange/20 font-serif absolute top-8 left-8">"</div>
                         <p class="text-2xl md:text-4xl font-serif leading-relaxed text-black relative z-10">
-                            Laissez-vous embarquer pour une croisière musicale aux sons des mélodies chaudes et rythmées du Brésil, des Caraïbes et du jazz, le temps d'un concert avec <span class="text-orange font-bold">MaraKana latin jazz</span>, un sextet haut en couleurs !
+                            Laissez-vous embarquer pour une croisière musicale aux sons des mélodies chaudes et rythmées
+                            du Brésil, des Caraïbes et du jazz, le temps d'un concert avec <span
+                                class="text-orange font-bold">MaraKana latin jazz</span>, un sextet haut en couleurs !
                         </p>
                         <div class="text-6xl md:text-8xl text-bleu/20 font-serif absolute bottom-8 right-8">"</div>
                     </div>
+                </div>
+                <!-- CTA Réserver -->
+                <div class="text-center mt-8">
+                    <a href="#contact"
+                        class="inline-block bg-orange text-white px-10 py-4 rounded-full font-bold hover:bg-black transition-colors text-sm uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                            Réserver une prestation
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
 
         <!-- GRILLE MUSICIENS -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 reveal">
-            
+
             <!-- MUSICIEN 1: Bruno  -->
             <div class="group relative overflow-hidden border border-black bg-gray-200 aspect-[3/4]">
-                <img src="assets/images/musicians/Bruno.JPG" class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700" alt="Bruno Sauvé">
-                <div class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <img src="assets/images/musicians/Bruno.JPG"
+                    class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700"
+                    alt="Bruno Sauvé">
+                <div
+                    class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <h3 class="font-serif text-xl italic">Bruno Sauvé</h3>
                     <p class="text-xs uppercase tracking-widest text-orange font-bold">Batterie</p>
-                    <span class="text-[10px] uppercase border border-black px-2 py-1 rounded-full mt-2 inline-block">Fondateur</span>
+                    <span
+                        class="text-[10px] uppercase border border-black px-2 py-1 rounded-full mt-2 inline-block">Fondateur</span>
                 </div>
-                 <!-- Mobile Label -->
-                 <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">Bruno Sauvé - Batterie</div>
+                <!-- Mobile Label -->
+                <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">
+                    Bruno Sauvé - Batterie</div>
             </div>
 
             <!-- MUSICIEN 2: Olivier -->
             <div class="group relative overflow-hidden border border-black bg-gray-200 aspect-[3/4]">
-                <img src="assets/images/musicians/Olivier.jpg" class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700" alt="Olivier Lorang">
-                <div class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <img src="assets/images/musicians/Olivier.jpg"
+                    class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700"
+                    alt="Olivier Lorang">
+                <div
+                    class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <h3 class="font-serif text-xl italic">Olivier Lorang</h3>
                     <p class="text-xs uppercase tracking-widest text-orange font-bold">Basse</p>
                 </div>
-                <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">Olivier Lorang - Basse</div>
+                <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">
+                    Olivier Lorang - Basse</div>
             </div>
 
             <!-- MUSICIEN 3: Michaela -->
             <div class="group relative overflow-hidden border border-black bg-gray-200 aspect-[3/4]">
-                <img src="assets/images/musicians/Michaela.jpg" class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700" alt="Michaela Slavikova">
-                <div class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <img src="assets/images/musicians/Michaela.jpg"
+                    class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700"
+                    alt="Michaela Slavikova">
+                <div
+                    class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <h3 class="font-serif text-xl italic">Michaela Slavikova</h3>
                     <p class="text-xs uppercase tracking-widest text-orange font-bold">Flûte</p>
                 </div>
-                 <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">Michaela Slavikova - Flûte</div>
+                <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">
+                    Michaela Slavikova - Flûte</div>
             </div>
 
             <!-- MUSICIEN 4: Jérôme -->
             <div class="group relative overflow-hidden border border-black bg-gray-200 aspect-square">
-                <img src="assets/images/musicians/Jérôme.jpg" class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700" alt="Jérôme Denner">
-                <div class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <img src="assets/images/musicians/Jérôme.jpg"
+                    class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700"
+                    alt="Jérôme Denner">
+                <div
+                    class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <h3 class="font-serif text-xl italic">Jérôme Denner</h3>
                     <p class="text-xs uppercase tracking-widest text-orange font-bold">Trompette</p>
                 </div>
-                 <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">Jérôme Denner - Trompette</div>
+                <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">
+                    Jérôme Denner - Trompette</div>
             </div>
 
             <!-- MUSICIEN 5: Nicolas -->
             <div class="group relative overflow-hidden border border-black bg-gray-200 aspect-square">
-                <img src="assets/images/musicians/Nicolas.jpg" class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700" alt="Nicolas Lancia">
-                <div class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <img src="assets/images/musicians/Nicolas.jpg"
+                    class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700"
+                    alt="Nicolas Lancia">
+                <div
+                    class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <h3 class="font-serif text-xl italic">Nicolas Lancia</h3>
                     <p class="text-xs uppercase tracking-widest text-orange font-bold">Piano</p>
                 </div>
-                 <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">Nicolas Lancia - Piano</div>
+                <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">
+                    Nicolas Lancia - Piano</div>
             </div>
 
             <!-- MUSICIEN 6: Patrick -->
             <div class="group relative overflow-hidden border border-black bg-gray-200 aspect-square">
-                <img src="assets/images/musicians/Patrick.jpg" class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700" alt="Patrick Leyrat">
-                <div class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <img src="assets/images/musicians/Patrick.jpg"
+                    class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700"
+                    alt="Patrick Leyrat">
+                <div
+                    class="absolute bottom-0 left-0 w-full bg-beige/95 border-t border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <h3 class="font-serif text-xl italic">Patrick Leyrat</h3>
                     <p class="text-xs uppercase tracking-widest text-orange font-bold">Congas</p>
                 </div>
-                 <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">Patrick Leyrat - Congas</div>
+                <div class="md:hidden absolute bottom-0 left-0 w-full bg-white/80 p-2 text-center text-sm font-bold">
+                    Patrick Leyrat - Congas</div>
             </div>
         </div>
     </section>
@@ -296,12 +592,16 @@
     <section class="bg-black text-beige py-24 px-6 md:px-12 text-center relative reveal">
         <h2 class="text-orange uppercase tracking-widest font-bold mb-8">Vidéo Studio</h2>
         <div class="max-w-5xl mx-auto border border-white/20 bg-[#1A1A1A] aspect-video overflow-hidden">
-            <iframe class="w-full h-full" src="https://www.youtube.com/embed/Uw0xxvOped8" title="Session Studio - MaraKana Latin Jazz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/Uw0xxvOped8"
+                title="Session Studio - MaraKana Latin Jazz" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
         </div>
         <h3 class="text-2xl font-serif italic mt-6">Session Red Studio</h3>
 
         <!-- CTA DÉCOUVRIR PLUS -->
-        <a href="videos.html" class="inline-block mt-12 bg-orange text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-colors text-sm uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]">
+        <a href="videos.html"
+            class="inline-block mt-12 bg-orange text-white px-12 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-colors text-sm uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]">
             Découvrir plus de vidéos
         </a>
     </section>
@@ -316,8 +616,11 @@
         <div class="grid md:grid-cols-3 gap-px bg-black border border-black">
             <!-- COL 1 -->
             <div class="bg-beige p-8 md:p-12 hover:bg-white transition-colors group h-full">
-                <div class="mb-6"><i data-lucide="music" class="w-12 h-12 text-bleu group-hover:text-orange transition-colors"></i></div>
-                <h3 class="text-2xl font-serif font-bold mb-8 uppercase tracking-wide group-hover:text-orange transition-colors">Standards Jazz</h3>
+                <div class="mb-6"><i data-lucide="music"
+                        class="w-12 h-12 text-bleu group-hover:text-orange transition-colors"></i></div>
+                <h3
+                    class="text-2xl font-serif font-bold mb-8 uppercase tracking-wide group-hover:text-orange transition-colors">
+                    Standards Jazz</h3>
                 <ul class="space-y-4">
                     <li class="border-b border-black/5 pb-2">But Not For Me (Chet Baker)</li>
                     <li class="border-b border-black/5 pb-2">A night in Tunisia (Dizzy Gillespie)</li>
@@ -326,10 +629,13 @@
                     <li class="border-b border-black/5 pb-2">Avec le temps (Léo Ferré)</li>
                 </ul>
             </div>
-             <!-- COL 2 -->
-             <div class="bg-beige p-8 md:p-12 hover:bg-white transition-colors group h-full">
-                <div class="mb-6"><i data-lucide="sun" class="w-12 h-12 text-bleu group-hover:text-orange transition-colors"></i></div>
-                <h3 class="text-2xl font-serif font-bold mb-8 uppercase tracking-wide group-hover:text-orange transition-colors">Brésil</h3>
+            <!-- COL 2 -->
+            <div class="bg-beige p-8 md:p-12 hover:bg-white transition-colors group h-full">
+                <div class="mb-6"><i data-lucide="sun"
+                        class="w-12 h-12 text-bleu group-hover:text-orange transition-colors"></i></div>
+                <h3
+                    class="text-2xl font-serif font-bold mb-8 uppercase tracking-wide group-hover:text-orange transition-colors">
+                    Brésil</h3>
                 <ul class="space-y-4">
                     <li class="border-b border-black/5 pb-2">Triste (Jobim)</li>
                     <li class="border-b border-black/5 pb-2">Partido Alto 2 (J. Beltrami)</li>
@@ -337,10 +643,13 @@
                     <li class="border-b border-black/5 pb-2">Recado Bossa Nova</li>
                 </ul>
             </div>
-             <!-- COL 3 -->
-             <div class="bg-beige p-8 md:p-12 hover:bg-white transition-colors group h-full">
-                <div class="mb-6"><i data-lucide="flame" class="w-12 h-12 text-bleu group-hover:text-orange transition-colors"></i></div>
-                <h3 class="text-2xl font-serif font-bold mb-8 uppercase tracking-wide group-hover:text-orange transition-colors">Caraïbes</h3>
+            <!-- COL 3 -->
+            <div class="bg-beige p-8 md:p-12 hover:bg-white transition-colors group h-full">
+                <div class="mb-6"><i data-lucide="flame"
+                        class="w-12 h-12 text-bleu group-hover:text-orange transition-colors"></i></div>
+                <h3
+                    class="text-2xl font-serif font-bold mb-8 uppercase tracking-wide group-hover:text-orange transition-colors">
+                    Caraïbes</h3>
                 <ul class="space-y-4">
                     <li class="border-b border-black/5 pb-2">Cap Verdean Blues</li>
                     <li class="border-b border-black/5 pb-2">Obsesion</li>
@@ -349,7 +658,8 @@
                 </ul>
             </div>
         </div>
-        <p class="text-center mt-12 font-serif italic text-2xl md:text-3xl">Et bien plus encore... Chaque concert est unique !</p>
+        <p class="text-center mt-12 font-serif italic text-2xl md:text-3xl">Et bien plus encore... Chaque concert est
+            unique !</p>
     </section>
 
     <!-- SECTION AGENDA -->
@@ -365,7 +675,8 @@
                 <div class="md:col-span-1 font-bold text-xl font-serif">25/01/25</div>
                 <div class="md:col-span-2 text-2xl font-light">Soirée Privée</div>
                 <div class="md:col-span-1 flex justify-between items-center">
-                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin" class="w-4"></i> Bordeaux</span>
+                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin"
+                            class="w-4"></i> Bordeaux</span>
                 </div>
             </div>
             <!-- DATE 2 -->
@@ -373,15 +684,17 @@
                 <div class="md:col-span-1 font-bold text-xl font-serif text-orange">11/04/25</div>
                 <div class="md:col-span-2 text-2xl font-light">Le Radis Noir</div>
                 <div class="md:col-span-1 flex justify-between items-center">
-                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin" class="w-4"></i> Bègles</span>
+                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin"
+                            class="w-4"></i> Bègles</span>
                 </div>
             </div>
-             <!-- DATE 3 -->
-             <div class="grid md:grid-cols-4 py-8 gap-4 hover:bg-gray-50 transition-colors">
+            <!-- DATE 3 -->
+            <div class="grid md:grid-cols-4 py-8 gap-4 hover:bg-gray-50 transition-colors">
                 <div class="md:col-span-1 font-bold text-xl font-serif text-orange">25/04/25</div>
                 <div class="md:col-span-2 text-2xl font-light">Soirée Privée</div>
                 <div class="md:col-span-1 flex justify-between items-center">
-                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin" class="w-4"></i> Bordeaux</span>
+                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin"
+                            class="w-4"></i> Bordeaux</span>
                 </div>
             </div>
             <!-- DATE 4 -->
@@ -389,26 +702,31 @@
                 <div class="md:col-span-1 font-bold text-xl font-serif text-orange">19/07/25</div>
                 <div class="md:col-span-2 text-2xl font-light">Festival de Jazz de Chasseneuil</div>
                 <div class="md:col-span-1 flex justify-between items-center">
-                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin" class="w-4"></i> Creuse</span>
+                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin"
+                            class="w-4"></i> Creuse</span>
                 </div>
             </div>
-             <!-- DATE 5 -->
-             <div class="grid md:grid-cols-4 py-8 gap-4 hover:bg-gray-50 transition-colors">
+            <!-- DATE 5 -->
+            <div class="grid md:grid-cols-4 py-8 gap-4 hover:bg-gray-50 transition-colors">
                 <div class="md:col-span-1 font-bold text-xl font-serif text-orange">04/10/25</div>
                 <div class="md:col-span-2 text-2xl font-light">Café le Baryton</div>
                 <div class="md:col-span-1 flex justify-between items-center">
-                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin" class="w-4"></i> Lanton</span>
+                    <span class="uppercase tracking-widest text-sm flex gap-2 items-center"><i data-lucide="map-pin"
+                            class="w-4"></i> Lanton</span>
                 </div>
             </div>
         </div>
 
         <!-- BLOC ACTUALITÉ STUDIO (FOND NOIR) -->
         <div class="mt-16 border border-black p-8 flex flex-col md:flex-row items-center gap-8 bg-black text-white">
-            <div class="w-16 h-16 bg-orange text-white flex items-center justify-center rounded-full text-4xl animate-pulse">💿</div>
+            <div
+                class="w-16 h-16 bg-orange text-white flex items-center justify-center rounded-full text-4xl animate-pulse">
+                💿</div>
             <div class="flex-1 text-center md:text-left">
                 <h3 class="font-bold uppercase tracking-widest mb-2 text-orange">Actualité Studio</h3>
                 <p class="text-lg text-gray-300">
-                    Séances au <strong>Red Studio</strong> pour finaliser les enregistrements. Sortie prévue fin 2025 / début 2026.
+                    Séances au <strong>Red Studio</strong> pour finaliser les enregistrements. Sortie prévue fin 2025 /
+                    début 2026.
                 </p>
             </div>
         </div>
@@ -419,18 +737,28 @@
         <div class="p-12 md:p-24 border-b md:border-b-0 md:border-r border-black bg-beige flex flex-col justify-center">
             <h3 class="text-3xl font-serif mb-6">Dans la Presse</h3>
             <p class="uppercase tracking-widest text-sm mb-8 text-orange">Vu sur Sud Ouest</p>
-            <div class="aspect-[4/3] border border-black bg-white p-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] flex items-center justify-center text-center">
-               <img src="assets/images/Baryton_SudOuest.png" alt="Article de presse Sud Ouest sur MaraKana" class="w-full h-full object-contain">
+            <div
+                class="aspect-[4/3] border border-black bg-white p-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] flex items-center justify-center text-center">
+                <img src="assets/images/Baryton_SudOuest.png" alt="Article de presse Sud Ouest sur MaraKana"
+                    class="w-full h-full object-contain">
             </div>
         </div>
         <div class="bg-black text-white p-12 md:p-24 flex flex-col justify-center text-center">
             <h3 class="text-3xl font-serif mb-6">Galerie Photos</h3>
             <p class="mb-8 text-gray-400">Découvrez les instants volés sur scène.</p>
             <div class="grid grid-cols-2 gap-4 hover:opacity-100 transition-opacity">
-                <img src="assets/images/gallery/Galerie 1.jpg" class="w-full h-32 object-cover border border-white/20 grayscale hover:grayscale-0 transition-all cursor-pointer" alt="MaraKana Live" onclick="openLightbox(this.src)">
-                <img src="assets/images/gallery/Galerie2.jpg" class="w-full h-32 object-cover border border-white/20 grayscale hover:grayscale-0 transition-all cursor-pointer" alt="MaraKana Live" onclick="openLightbox(this.src)">
-                <img src="assets/images/gallery/Galerie3.jpg" class="w-full h-32 object-cover border border-white/20 grayscale hover:grayscale-0 transition-all cursor-pointer" alt="MaraKana Live" onclick="openLightbox(this.src)">
-                <img src="assets/images/gallery/Galerie 1.jpg" class="w-full h-32 object-cover border border-white/20 grayscale hover:grayscale-0 transition-all cursor-pointer" alt="MaraKana Live" onclick="openLightbox(this.src)">
+                <img src="assets/images/gallery/Galerie 1.jpg"
+                    class="w-full h-32 object-cover border border-white/20 grayscale hover:grayscale-0 transition-all cursor-pointer"
+                    alt="MaraKana Live" onclick="openLightbox(this.src)">
+                <img src="assets/images/gallery/Galerie2.jpg"
+                    class="w-full h-32 object-cover border border-white/20 grayscale hover:grayscale-0 transition-all cursor-pointer"
+                    alt="MaraKana Live" onclick="openLightbox(this.src)">
+                <img src="assets/images/gallery/Galerie3.jpg"
+                    class="w-full h-32 object-cover border border-white/20 grayscale hover:grayscale-0 transition-all cursor-pointer"
+                    alt="MaraKana Live" onclick="openLightbox(this.src)">
+                <img src="assets/images/gallery/Galerie 1.jpg"
+                    class="w-full h-32 object-cover border border-white/20 grayscale hover:grayscale-0 transition-all cursor-pointer"
+                    alt="MaraKana Live" onclick="openLightbox(this.src)">
             </div>
         </div>
     </section>
@@ -447,13 +775,16 @@
         <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
             <div>
                 <p class="text-xl leading-relaxed mb-8 font-serif italic">
-                    Une question ? Merci de prendre contact avec le groupe MaraKana ! Nous vous répondrons dès que possible.
+                    Une question ? Merci de prendre contact avec le groupe MaraKana ! Nous vous répondrons dès que
+                    possible.
                 </p>
                 <div class="space-y-6">
-                    <a href="mailto:bruno.sauve@hotmail.fr" class="flex items-center gap-4 text-lg hover:text-orange transition-colors border-b border-black/10 pb-4">
+                    <a href="mailto:bruno.sauve@hotmail.fr"
+                        class="flex items-center gap-4 text-lg hover:text-orange transition-colors border-b border-black/10 pb-4">
                         <i data-lucide="mail"></i> bruno.sauve@hotmail.fr
                     </a>
-                    <a href="tel:0661534536" class="flex items-center gap-4 text-lg hover:text-orange transition-colors border-b border-black/10 pb-4">
+                    <a href="tel:0661534536"
+                        class="flex items-center gap-4 text-lg hover:text-orange transition-colors border-b border-black/10 pb-4">
                         <i data-lucide="phone"></i> 06.61.53.45.36
                     </a>
                     <div class="flex items-center gap-4 text-lg border-b border-black/10 pb-4">
@@ -461,14 +792,22 @@
                     </div>
                 </div>
             </div>
-            
-            <form method="POST" action="https://forms.un-static.com/forms/b6c7ab08a3a87699e47448de8cdfd419cf249318" class="space-y-4">
+
+            <form method="POST" action="https://forms.un-static.com/forms/b6c7ab08a3a87699e47448de8cdfd419cf249318"
+                class="space-y-4">
                 <div class="grid grid-cols-2 gap-4">
-                    <input type="text" name="nom" placeholder="Nom *" class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none" required>
-                    <input type="email" name="email" placeholder="Email *" class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none" required>
+                    <input type="text" name="nom" placeholder="Nom *"
+                        class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none"
+                        required>
+                    <input type="email" name="email" placeholder="Email *"
+                        class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none"
+                        required>
                 </div>
-                <input type="tel" name="telephone" placeholder="Téléphone" class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none">
-                <select name="type_evenement" class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none text-black/70" required>
+                <input type="tel" name="telephone" placeholder="Téléphone"
+                    class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none">
+                <select name="type_evenement"
+                    class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none text-black/70"
+                    required>
                     <option value="">Type d'événement *</option>
                     <option value="mairie">Mairie</option>
                     <option value="festival">Festival</option>
@@ -476,10 +815,13 @@
                     <option value="mariage">Mariage</option>
                     <option value="autre">Autre</option>
                 </select>
-                <textarea rows="4" name="message" placeholder="Message *" class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none" required></textarea>
+                <textarea rows="4" name="message" placeholder="Message *"
+                    class="w-full bg-transparent border-b border-black p-3 focus:border-orange outline-none"
+                    required></textarea>
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-4">
                     <p class="text-sm text-gray-600 italic">Tous les champs marqués d'un * sont obligatoires</p>
-                    <button type="submit" class="bg-bleu text-white px-12 py-4 font-bold uppercase tracking-widest hover:bg-orange transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                    <button type="submit"
+                        class="bg-bleu text-white px-12 py-4 font-bold uppercase tracking-widest hover:bg-orange transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                         Envoyer
                     </button>
                 </div>
@@ -487,22 +829,110 @@
         </div>
     </section>
 
-    <!-- FOOTER NOIR (Cohérent avec Header) -->
-    <footer class="bg-black text-white py-12 px-6 md:px-12 text-center md:text-left border-t border-white/10">
-        <div class="flex flex-col md:flex-row justify-between items-center md:items-end gap-8">
-            <div class="text-center md:text-left">
-                <div class="text-4xl font-serif font-bold mb-2">
-                     MaraKana<span class="text-orange">.</span>
+    <!-- PLAYER AUDIO FLOTTANT -->
+    <div id="audio-player" class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleAudio()"
+            class="group relative w-20 h-20 md:w-24 md:h-24 cursor-pointer focus:outline-none"
+            aria-label="Jouer/Pause la musique">
+            <!-- Disque vinyle -->
+            <div id="vinyl-disc"
+                class="absolute inset-0 rounded-full bg-gradient-to-br from-black via-gray-900 to-black border-4 border-orange shadow-2xl transition-transform duration-300 group-hover:scale-105">
+                <!-- Rainures du vinyle -->
+                <div class="absolute inset-2 rounded-full border border-white/10"></div>
+                <div class="absolute inset-4 rounded-full border border-white/5"></div>
+                <div class="absolute inset-6 rounded-full border border-white/10"></div>
+                <!-- Centre du disque (étiquette) -->
+                <div
+                    class="absolute inset-0 m-auto w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-orange to-yellow-500 flex items-center justify-center shadow-inner">
+                    <div class="w-2 h-2 rounded-full bg-black"></div>
                 </div>
-                <p class="text-sm opacity-50">Latin Jazz • Bordeaux • Rayonnement : Nouvelle-Aquitaine et France (selon événement)</p>
             </div>
-            <div class="flex gap-6 justify-center">
-                <a href="https://www.facebook.com/p/MaraKana-latin-jazz-61560077231411/" target="_blank" rel="noopener noreferrer" class="hover:text-orange transition-colors"><i data-lucide="facebook"></i></a>
-                <a href="https://www.youtube.com/@brunosauve6155" target="_blank" rel="noopener noreferrer" class="hover:text-orange transition-colors"><i data-lucide="youtube"></i></a>
+            <!-- Icône Play/Pause -->
+            <div id="play-icon"
+                class="absolute inset-0 flex items-center justify-center text-white/80 group-hover:text-white transition-colors">
+                <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
             </div>
-            <div class="text-center md:text-right text-sm opacity-50">
-                <p>© 2025 MaraKana Latin Jazz.</p>
-                <p>Tous droits réservés.</p>
+            <div id="pause-icon"
+                class="absolute inset-0 hidden items-center justify-center text-white/80 group-hover:text-white transition-colors">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                </svg>
+            </div>
+        </button>
+        <!-- Info track -->
+        <div id="track-info"
+            class="hidden absolute bottom-full right-0 mb-2 bg-black text-white px-4 py-2 rounded-lg shadow-xl text-sm whitespace-nowrap border border-orange/30">
+            <p class="font-bold text-orange">♪ Triste</p>
+            <p class="text-white/70 text-xs">Tom Jobim - MaraKana</p>
+        </div>
+    </div>
+    <audio id="background-audio" src="assets/audio/Triste - Marakana.mp3" preload="auto"></audio>
+
+    <style>
+        @keyframes spin-vinyl {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .vinyl-spinning {
+            animation: spin-vinyl 3s linear infinite;
+        }
+    </style>
+
+    <!-- FOOTER NOIR (Cohérent avec Header) -->
+    <footer class="bg-black text-white py-12 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <!-- Navigation Footer -->
+            <nav class="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-8 text-sm">
+                <a href="#hero" class="hover:text-orange transition-colors">Accueil</a>
+                <a href="album.html" class="hover:text-orange transition-colors">Album</a>
+                <a href="#le-groupe" class="hover:text-orange transition-colors">Le Groupe</a>
+                <a href="#repertoire" class="hover:text-orange transition-colors">Répertoire</a>
+                <a href="videos.html" class="hover:text-orange transition-colors">Vidéos & Audios</a>
+                <a href="#agenda" class="hover:text-orange transition-colors">Agenda</a>
+                <a href="#contact" class="hover:text-orange transition-colors">Contact</a>
+            </nav>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 pt-8 border-t border-white/10">
+                <div class="text-center md:text-left">
+                    <div class="text-4xl font-serif font-bold mb-2">
+                        MaraKana<span class="text-orange">.</span>
+                    </div>
+                    <p class="text-sm opacity-50">Latin Jazz • Bordeaux • Nouvelle-Aquitaine</p>
+                </div>
+                <div class="flex gap-6 justify-center">
+                    <a href="https://www.facebook.com/p/MaraKana-latin-jazz-61560077231411/" target="_blank"
+                        rel="noopener noreferrer" class="hover:text-[#1877F2] transition-colors"><i
+                            data-lucide="facebook"></i></a>
+                    <a href="https://www.youtube.com/@brunosauve6155" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-[#c4302b] transition-colors"><i data-lucide="youtube"></i></a>
+                    <a href="https://open.spotify.com/intl-fr/album/7BlxTYMzkwo8uePmGIjG8K" target="_blank"
+                        rel="noopener noreferrer" class="hover:text-[#1db954] transition-colors" title="Spotify">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                        </svg>
+                    </a>
+                    <a href="https://link.deezer.com/s/32iJGBZy4IJpJrgoCOs90" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-[#A238FF] transition-colors" title="Deezer">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M18.81 11.12h4.19v1.69h-4.19v-1.69zm0 2.81h4.19v1.69h-4.19v-1.69zm0 2.82h4.19v1.68h-4.19v-1.68zm0-8.44h4.19v1.69h-4.19V8.31zm-5.75 5.62h4.19v1.69h-4.19v-1.69zm0 2.82h4.19v1.68h-4.19v-1.68zm-5.75 0h4.19v1.68H7.31v-1.68zm0-2.82h4.19v1.69H7.31v-1.69zm5.75-2.81h4.19v1.69h-4.19v-1.69zM1 16.75h4.19v1.68H1v-1.68z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="text-center md:text-right text-sm opacity-50">
+                    <p>© 2026 MaraKana Latin Jazz.</p>
+                    <p>Tous droits réservés.</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -549,6 +979,47 @@
         function closeLightbox() {
             document.getElementById('lightbox').classList.remove('active');
         }
+
+        // 5. Audio Player avec vinyle animé
+        let isPlaying = false;
+        const audio = document.getElementById('background-audio');
+        const vinylDisc = document.getElementById('vinyl-disc');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+        const trackInfo = document.getElementById('track-info');
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                vinylDisc.classList.remove('vinyl-spinning');
+                playIcon.classList.remove('hidden');
+                playIcon.classList.add('flex');
+                pauseIcon.classList.add('hidden');
+                pauseIcon.classList.remove('flex');
+                trackInfo.classList.add('hidden');
+            } else {
+                audio.play();
+                vinylDisc.classList.add('vinyl-spinning');
+                playIcon.classList.add('hidden');
+                playIcon.classList.remove('flex');
+                pauseIcon.classList.remove('hidden');
+                pauseIcon.classList.add('flex');
+                trackInfo.classList.remove('hidden');
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Masquer le track info quand la musique se termine
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            vinylDisc.classList.remove('vinyl-spinning');
+            playIcon.classList.remove('hidden');
+            playIcon.classList.add('flex');
+            pauseIcon.classList.add('hidden');
+            pauseIcon.classList.remove('flex');
+            trackInfo.classList.add('hidden');
+        });
     </script>
 </body>
+
 </html>
